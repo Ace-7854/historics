@@ -13,15 +13,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
   margin: 0;
   display: flex;
@@ -30,39 +21,84 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* ---------- Navigation Bar (.navbar) ---------- */
+/* Use a slightly lighter surface so it reads against the page */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(23,26,30,0.92), rgba(17,19,21,0.96));
+  padding: 0 1.25rem;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+  z-index: 1200;
+  gap: 1rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+/* container inside navbar to constrain content */
+.navbar .nav-inner {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* brand */
+.navbar .brand {
+  color: var(--heading);
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* nav items */
+.navbar .navlist {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* modern button-like nav items */
+.navbar .navitem {
+  appearance: none;
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 0.5rem 0.75rem;
+  border-radius: calc(var(--radius-sm));
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 180ms ease, color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* hover/focus: subtle surface */
+.navbar .navitem:hover,
+.navbar .navitem:focus {
+  background: rgba(255,255,255,0.02);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+}
+.navbar .navitem:focus-visible {
+  outline: 2px solid rgba(63,176,255,0.14);
+  outline-offset: 3px;
+}
+
+/* Active/current page - solid accent pill */
+.navbar .navitem[aria-current="page"],
+.navbar a.navitem[aria-current="page"] {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 85%, black 10%), var(--accent));
+  color: var(--accent-contrast, #08121a);
+  box-shadow: 0 8px 26px rgba(63,176,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.02);
 }
