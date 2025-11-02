@@ -102,3 +102,55 @@ body {
   color: var(--accent-contrast, #08121a);
   box-shadow: 0 8px 26px rgba(63,176,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.02);
 }
+.type-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2f2f2f;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  padding: 10px 14px;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-area {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #e6e6e6;
+  font-size: 16px;
+  font-family: 'Inter', sans-serif;
+  padding: 8px;
+}
+
+.input-area::placeholder {
+  color: #888;
+}
+
+.send-button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.send-button:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.send-button:active {
+  background-color: #1d4ed8;
+  transform: translateY(0);
+}
+
