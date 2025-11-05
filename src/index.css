@@ -21,8 +21,7 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- Navigation Bar (.navbar) ---------- */
-/* Use a slightly lighter surface so it reads against the page */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -38,7 +37,7 @@ body {
   gap: 1rem;
 }
 
-/* container inside navbar to constrain content */
+
 .navbar .nav-inner {
   width: 100%;
   max-width: var(--max-width);
@@ -48,7 +47,7 @@ body {
   justify-content: space-between;
 }
 
-/* brand */
+
 .navbar .brand {
   color: var(--heading);
   font-weight: 700;
@@ -58,14 +57,14 @@ body {
   gap: 0.5rem;
 }
 
-/* nav items */
+
 .navbar .navlist {
   display: flex;
   gap: 0.5rem;
   align-items: center;
 }
 
-/* modern button-like nav items */
+
 .navbar .navitem {
   appearance: none;
   background: transparent;
@@ -82,7 +81,7 @@ body {
   transition: background-color 180ms ease, color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
 }
 
-/* hover/focus: subtle surface */
+
 .navbar .navitem:hover,
 .navbar .navitem:focus {
   background: rgba(255,255,255,0.02);
@@ -95,7 +94,7 @@ body {
   outline-offset: 3px;
 }
 
-/* Active/current page - solid accent pill */
+
 .navbar .navitem[aria-current="page"],
 .navbar a.navitem[aria-current="page"] {
   background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 85%, black 10%), var(--accent));
@@ -155,3 +154,29 @@ body {
   transform: translateY(1px);
   box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
 }
+/*navigaation bar attempt*/
+.navbar {
+  width: 200px;
+  height: 100vh;
+  background-color: #202123;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.navbar-btn {
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #343541;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navbar-btn:hover {
+  background-color: #3f4045;
+}
+/*navigation bar attempt*/
