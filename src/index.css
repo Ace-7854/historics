@@ -74,29 +74,94 @@ body {
   transform: translateY(1px);
   box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
 }
-/*navigaation bar attempt*/
+/*///////////////////////////////////navigaation bar//////////////////////////////////////////*/
 .navbar {
-  width: 200px;
+  width: 250px;
   height: 100vh;
   background-color: #202123;
-  color: white;
+  color: #e0e0e0;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  box-sizing: border-box;
+  justify-content: space-between;
+  font-family: system-ui, sans-serif;
 }
 
+/* Top Section */
+.navbar-top {
+  padding: 12px;
+  border-bottom: 1px solid #3a3b3f;
+}
+
+/*/// Button effects///*/
 .navbar-btn {
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   background-color: #343541;
-  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
+  color: #e0e0e0;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
 }
 
 .navbar-btn:hover {
   background-color: #3f4045;
 }
-/*navigation bar attempt*/
+
+.icon {
+  margin-right: 6px;
+}
+
+/*/// Chat Log ///*/
+.navbar-chats {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.chat-item {
+  background-color: #2b2c2f;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s ease;
+}
+
+.chat-item:hover {
+  background-color: #3f4045;
+}
+
+/*/// Footer ///*/
+.navbar-footer {
+  border-top: 1px solid #3a3b3f;
+  padding: 12px;
+}
+
+.navbar-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-footer li {
+  margin-bottom: 6px;
+}
+
+.navbar-footer a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-footer a:hover {
+  color: #ffffff;
+}
+/*///////////////////////////////////navigaation bar//////////////////////////////////////////*/

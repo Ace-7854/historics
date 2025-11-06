@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './assets/elements/Navbar.jsx'
 import './App.css'
+import './index.css'
 import ChatPage from './pages/ChatPage.jsx';
 
 function App() {
