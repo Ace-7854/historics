@@ -4,6 +4,15 @@ import { Link } from "react-router-dom";
 
 
 export default function Navbar() {
+
+  function handleNewChat() {
+    console.log("New Chat initiated");
+  }
+
+  function handleSearchChats() {
+    console.log("Search Chats clicked");
+  }
+
   const exampleChats = [
     "To Be or Not To Be",
     "Macbeth’s Dilemma",
@@ -16,11 +25,11 @@ export default function Navbar() {
     <aside className="navbar">
       {/*/// Top Section ///*/}
       <div className="navbar-top">
-        <button className="navbar-btn">
+        <button className="navbar-btn" onClick={handleNewChat}>
           <Plus size={16} className="icon" />
           New Chat
         </button>
-        <button className="navbar-btn">
+        <button className="navbar-btn" onClick={handleSearchChats}>
           <Search size={16} className="icon" />
           Search Chats
         </button>
@@ -29,17 +38,16 @@ export default function Navbar() {
       {/*/// Chat List ///*/}
       <div className="navbar-chats">
         {exampleChats.map((chat, index) => (
-          <div key={index} className="chat-item">
+          <button key={index} className="chat-item" onClick={() => console.log(`Selected chat: ${chat}`)}>
             {chat}
-          </div>
+          </button>
         ))}
       </div>
 
       {/*/// Footer ///*/}
       <footer className="navbar-footer">
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/chat">Chat</Link></li>
+          <li><Link to="/">Chat</Link></li>
         </ul>
       </footer>
     </aside>
