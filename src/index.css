@@ -21,87 +21,6 @@ body {
   min-height: 100vh;
 }
 
-/* ---------- Navigation Bar (.navbar) ---------- */
-/* Use a slightly lighter surface so it reads against the page */
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  background: linear-gradient(180deg, rgba(23,26,30,0.92), rgba(17,19,21,0.96));
-  padding: 0 1.25rem;
-  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
-  z-index: 1200;
-  gap: 1rem;
-}
-
-/* container inside navbar to constrain content */
-.navbar .nav-inner {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* brand */
-.navbar .brand {
-  color: var(--heading);
-  font-weight: 700;
-  font-size: 1rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* nav items */
-.navbar .navlist {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-/* modern button-like nav items */
-.navbar .navitem {
-  appearance: none;
-  background: transparent;
-  border: none;
-  color: var(--muted);
-  padding: 0.5rem 0.75rem;
-  border-radius: calc(var(--radius-sm));
-  font-weight: 600;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-  transition: background-color 180ms ease, color 160ms ease, transform 120ms ease, box-shadow 160ms ease;
-}
-
-/* hover/focus: subtle surface */
-.navbar .navitem:hover,
-.navbar .navitem:focus {
-  background: rgba(255,255,255,0.02);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
-}
-.navbar .navitem:focus-visible {
-  outline: 2px solid rgba(63,176,255,0.14);
-  outline-offset: 3px;
-}
-
-/* Active/current page - solid accent pill */
-.navbar .navitem[aria-current="page"],
-.navbar a.navitem[aria-current="page"] {
-  background: linear-gradient(180deg, color-mix(in srgb, var(--accent) 85%, black 10%), var(--accent));
-  color: var(--accent-contrast, #08121a);
-  box-shadow: 0 8px 26px rgba(63,176,255,0.12), inset 0 -1px 0 rgba(255,255,255,0.02);
-}
 .type-box {
   display: flex;
   align-items: center;
@@ -146,11 +65,123 @@ body {
 
 .send-button:hover {
   background-color: #2563eb;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
 }
 
 .send-button:active {
   background-color: #1d4ed8;
-  transform: translateY(0);
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.2);
+}
+/*///////////////////////////////////navigaation bar//////////////////////////////////////////*/
+.navbar {
+  width: 250px;
+  height: 100vh;
+  background-color: #202123;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: system-ui, sans-serif;
 }
 
+/* Top Section */
+.navbar-top {
+  padding: 12px;
+  border-bottom: 1px solid #3a3b3f;
+}
+
+/*/// Button effects///*/
+.navbar-btn {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 8px;
+  background-color: #343541;
+  border: none;
+  border-radius: 6px;
+  color: #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.navbar-btn:hover {
+  background-color: #3f4045;
+}
+
+.icon {
+  margin-right: 6px;
+}
+
+/*/// Chat Log ///*/
+.navbar-chats {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.chat-item {
+  background-color: #2b2c2f;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background 0.2s ease;
+}
+
+.chat-item:hover {
+  background-color: #3f4045;
+}
+
+/*/// Footer ///*/
+.navbar-footer {
+  border-top: 1px solid #3a3b3f;
+  padding: 12px;
+}
+
+.navbar-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-footer li {
+  margin-bottom: 6px;
+}
+
+.navbar-footer a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.navbar-footer a:hover {
+  color: #ffffff;
+}
+
+.search-input {
+  width: 75%;
+  padding: 8px;
+  margin: 8px auto;
+  background-color: #343541;
+  border: 1px solid #3a3b3f;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
