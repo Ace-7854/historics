@@ -48,7 +48,6 @@ export default function Navbar() {
           />
           <button className="search-close-btn" onClick={() => setShowSearch(false)}>X</button>
           <div className="table-chats">
-            {/* Render search results here */}
             {exampleChats
               .filter((chat) => chat.toLowerCase().includes(searchTerm.toLowerCase()))
               .map((chat, index) => (
