@@ -1,16 +1,18 @@
-
 import { Plus, Search } from "lucide-react"; 
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 
 export default function Navbar() {
+  const [showSearch, setShowSearch] = useState(false);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function handleNewChat() {
     console.log("New Chat initiated");
   }
 
   function handleSearchChats() {
-    console.log("Search Chats clicked");
+    setShowSearch(true);
   }
 
   const exampleChats = [
@@ -35,16 +37,40 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/*/// Chat List ///*/}
-      <div className="navbar-chats">
-        {exampleChats.map((chat, index) => (
-          <button key={index} className="chat-item" onClick={() => console.log(`Selected chat: ${chat}`)}>
-            {chat}
-          </button>
-        ))}
-      </div>
+      {showSearch && (
+        <div className="search-pop-up">
+          <input
+            type="text"
+            placeholder="Search chats..."
+            className="search-input"
+            onChange={(e) => setSearchTerm(e.target.value)}
+            value={searchTerm}
+          />
+          <button className="search-close-btn" onClick={() => setShowSearch(false)}>X</button>
+          <div className="table-chats">
+            {/* Render search results here */}
+            {exampleChats
+              .filter((chat) => chat.toLowerCase().includes(searchTerm.toLowerCase()))
+              .map((chat, index) => (
+                <button key={index} className="chat-item" onClick={() => console.log(`Selected chat: ${chat}`)}>
+                  {chat}
+                </button>
+              ))}
+          </div>
+        </div>
+      )}
 
-      {/*/// Footer ///*/}
+    {/*/// Chat List ///*/}
+    {!showSearch && (
+        <div className="navbar-chats">
+            {exampleChats.map((chat, index) => (
+                <button key={index} className="chat-item" onClick={() => console.log(`Selected chat: ${chat}`)}>
+                    {chat}
+                </button>
+            ))}
+        </div>
+    )}
+    {/*/// Footer ///*/}
       <footer className="navbar-footer">
         <ul>
           <li><Link to="/">Chat</Link></li>

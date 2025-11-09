@@ -164,4 +164,24 @@ body {
 .navbar-footer a:hover {
   color: #ffffff;
 }
-/*///////////////////////////////////navigaation bar//////////////////////////////////////////*/
+
+.search-input {
+  width: 75%;
+  padding: 8px;
+  margin: 8px auto;
+  background-color: #343541;
+  border: 1px solid #3a3b3f;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+.search-input::placeholder {
+  color: #6b7280;
+}
