@@ -210,3 +210,20 @@ body {
   width: auto;
   max-width: calc(100% - 40px);
 }
+
+.text-area {
+  flex: 1;
+  background-color: #2b2c2f;
+  color: #e0e0e0;
+  padding: 20px;
+  border-radius: 6px;
+  overflow-y: auto;
+  margin-bottom: 20px; /* Space above the type-box */
+}
+
+.text-area p {
+  margin: 0 0 10px;
+  line-height: 1.5;
+  font: optional;
+  font-size: small;
+}

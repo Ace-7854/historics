@@ -1,9 +1,10 @@
 import TypeBox from "../assets/elements/TypeBox.jsx";
-import TextArea from "../assets/elements/TextArea.jsx";
+import TextBox from "../assets/elements/TextBox.jsx";
+
 export default function ChatPage() {
     return (
         <div className="chat-page">
-            <TextArea />
+            <TextBox />
             <TypeBox />
         </div>
     );
