@@ -6,7 +6,8 @@ import { useState } from "react";
 export default function Navbar() {
     const [showSearch, setShowSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const [exampleChats] = useState([]);    
+    const [exampleChats] = useState([]);   
+     
     function handleNewChat() {
       console.log("New Chat clicked");
       exampleChats.push(`Chat ${exampleChats.length + 1}`);
