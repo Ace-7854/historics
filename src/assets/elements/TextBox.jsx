@@ -1,8 +1,9 @@
-export default function TextBox() {
-    
-    return (
-        <div className="text-area">
-            <p>This is a sample text box for displaying chat messages.</p>
-        </div>
-    );
+export default function TextBox({ messages = ["SYSTEM: Welcome to the chatbot"] }) {
+  return (
+    <div className="text-area">
+      {messages.map((msg, index) => (
+        <div key={index} className="message">{msg}</div>
+      ))}
+    </div>
+  );
 }

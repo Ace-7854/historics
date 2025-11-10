@@ -185,6 +185,7 @@ body {
 .search-input::placeholder {
   color: #6b7280;
 }
+
 .chat-page {
   position: absolute;
   top: 0;
@@ -209,6 +210,7 @@ body {
   margin: 0 20px 20px;
   width: auto;
   max-width: calc(100% - 40px);
+  position: relative; /* Ensure it stays at the bottom */
 }
 
 .text-area {
@@ -221,9 +223,18 @@ body {
   margin-bottom: 20px; /* Space above the type-box */
 }
 
-.text-area p {
-  margin: 0 0 10px;
-  line-height: 1.5;
-  font: optional;
-  font-size: small;
+.text-area .message {
+  margin: 0 0 12px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #e6e6e6;
+
+  background-color: #2a2b2d; /* dark-ish message box */
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px 12px;
+
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 6px 18px rgba(0, 0, 0, 0.25);
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
