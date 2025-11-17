@@ -64,6 +64,7 @@ export default function Navbar() {
         <footer className="navbar-footer">
           <ul>
             <li><Link to="/">Chat</Link></li>
+            <li><Link to='/login'>Login</Link></li>
           </ul>
         </footer>
       </aside>
