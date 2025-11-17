@@ -291,3 +291,132 @@ body {
   overflow-wrap: anywhere;
   white-space: pre-wrap;
 }
+
+.login-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 250px);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(51, 6, 6);
+}
+
+/* Login card centered on .login-page */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: #3b2414; /* distinct from page bg (rgb(51,6,6)) */
+  color: #f6e7c3;
+  border: 1px solid rgba(189, 160, 84, 0.18);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+/* Optional heading inside the card */
+.login-card .card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffefb8;
+}
+
+/* Group of inputs (username, password, etc.) */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Inputs inside form-group */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group textarea,
+.form-group select {
+  width: 90%;
+  background-color: rgba(20, 12, 8, 0.6);
+  color: #efe2a3;
+  border: 1px solid rgba(170, 126, 49, 0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: box-shadow 0.12s ease, transform 0.08s ease, border-color 0.12s ease;
+  --webkit-appearance: none;
+}
+
+/* Placeholder color */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(221, 198, 120, 0.6);
+}
+
+/* Focus states */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: rgba(220, 170, 60, 0.6);
+  box-shadow: 0 6px 18px rgba(100, 60, 20, 0.18);
+  transform: translateY(-1px);
+}
+
+/* Login button */
+.lgn-btn {
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: linear-gradient(180deg, #5a3a13 0%, #40260a 100%);
+  color: #f7e9b1;
+  border: 1px solid rgba(200, 150, 50, 0.18);
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+  box-shadow: 0 6px 18px rgba(30, 10, 6, 0.45);
+}
+
+/* Hover/active for button */
+.lgn-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(40, 14, 8, 0.55);
+  filter: brightness(1.03);
+}
+
+.lgn-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(20, 8, 5, 0.45);
+  filter: brightness(0.98);
+}
+
+/* Disabled state */
+.lgn-btn[disabled],
+.lgn-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Compact spacing for small screens */
+@media (max-width: 440px) {
+  .login-card {
+    padding: 18px;
+    gap: 12px;
+  }
+  .lgn-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+}
