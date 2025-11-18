@@ -52,7 +52,7 @@ body {
 
 .send-button {
   background-color: #462c09;
-  color: rgb(169, 149, 45);
+  color: rgb(255, 255, 255);
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
@@ -372,7 +372,6 @@ body {
 .chat-page,
 .login-page {
   transition: width 180ms ease;
-}
 }
 
 /* Enhanced navbar button styles */
