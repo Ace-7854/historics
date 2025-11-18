@@ -349,6 +349,95 @@ body {
   border-radius: 8px;
   font-size: 14px;
   outline: none;
+  transition: box-shadow 0.12s ease, transform 0.08s ease, border-color 0.12s ease, width 0.18s ease;
+  --webkit-appearance: none;
+}
+
+/* Expand chat/login when navbar is collapsed (assumes navbar is a preceding sibling) */
+.navbar.collapsed ~ .chat-page,
+.navbar.collapsed ~ .login-page {
+  width: calc(100% - 72px);
+  transition: width 180ms ease;
+}
+
+/* Match the collapsed widths defined elsewhere for small screens */
+@media (max-width: 640px) {
+  .navbar.collapsed ~ .chat-page,
+  .navbar.collapsed ~ .login-page {
+    width: calc(100% - 64px);
+  }
+}
+
+/* Smooth transitions for normal state as well */
+.chat-page,
+.login-page {
+  transition: width 180ms ease;
+}
+}
+
+/* Enhanced navbar button styles */
+.navbar-btn {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: linear-gradient(180deg,#451605 0%, #2b0e04 100%);
+  border: 1px solid rgba(255,255,255,0.04);
+  color: #d8b54b;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: flex-start;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 6px;
+  transition: background 160ms ease, transform 120ms ease, padding 160ms ease, width 160ms ease;
+}
+
+/* icon + label inside button */
+.navbar-btn .icon { flex: 0 0 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
+.navbar-btn .label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* hover/active refinements */
+.navbar-btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
+.navbar-btn:active { transform: translateY(0); filter: brightness(0.98); }
+
+/* Collapsed navbar: shrink width and show compact icon-only buttons */
+.navbar.collapsed {
+  width: 72px; /* smaller collapsed width */
+  min-width: 72px;
+  max-width: 72px;
+  transition: width 180ms ease, padding 180ms ease;
+}
+
+/* Make buttons icon-focused when navbar is collapsed */
+.navbar.collapsed .navbar-btn {
+  justify-content: center;
+  padding: 8px;
+  width: 56px;
+  border-radius: 8px;
+}
+
+/* hide labels in collapsed state */
+.navbar.collapsed .navbar-btn .label { display: none; }
+
+/* reduce padding of top/footer when collapsed */
+.navbar.collapsed .navbar-top,
+.navbar.collapsed .navbar-footer { padding-left: 8px; padding-right: 8px; }
+
+/* responsive tweak for tighter collapse on smaller screens */
+@media (max-width: 640px) {
+  .navbar.collapsed { width: 64px; min-width: 64px; max-width: 64px; }
+  .navbar.collapsed .navbar-btn { width: 48px; }
+}
+.form-group select {
+  width: 90%;
+  background-color: rgba(20, 12, 8, 0.6);
+  color: #efe2a3;
+  border: 1px solid rgba(170, 126, 49, 0.2);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
   transition: box-shadow 0.12s ease, transform 0.08s ease, border-color 0.12s ease;
   --webkit-appearance: none;
 }
