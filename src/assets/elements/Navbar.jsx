@@ -6,7 +6,7 @@ import { useState } from "react";
 export default function Navbar() {
     const [showSearch, setShowSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const [exampleChats] = useState([]);   
+    const [exampleChats] = useState([]); // Temporary chat list, to be replaced with real data   
      
     function handleNewChat() {
       console.log("New Chat clicked");
@@ -50,7 +50,7 @@ export default function Navbar() {
         title={collapsed ? "Expand" : "Collapse"}
         >
         {/* show a simple chevron */}
-        <span className="toggle-icon">{collapsed ? "▶" : "◀"}</span>
+        <span className="icon">{collapsed ? "▶" : "◀"}</span>
         {!collapsed && <span className="sr-only">Collapse</span>}
         </button>
       </div>
