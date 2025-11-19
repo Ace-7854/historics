@@ -44,7 +44,7 @@ export default function Navbar() {
         </button>
 
         <button
-        className="navbar-toggle"
+        className="navbar-btn"
         onClick={() => setCollapsed((s) => !s)}
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
         title={collapsed ? "Expand" : "Collapse"}

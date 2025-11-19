@@ -376,6 +376,7 @@ body {
 
 /* Enhanced navbar button styles */
 .navbar-btn {
+  background-color: red;
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 8px;
@@ -393,8 +394,18 @@ body {
 }
 
 /* icon + label inside button */
-.navbar-btn .icon { flex: 0 0 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; }
-.navbar-btn .label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.navbar-btn .icon { 
+  flex: 0 0 20px; 
+  height: 20px; 
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.navbar-btn .label { 
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+}
 
 /* hover/active refinements */
 .navbar-btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
