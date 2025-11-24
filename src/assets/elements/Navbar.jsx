@@ -1,3 +1,4 @@
+// Component for sidebar navigation - Manages chats, search, nav links
 import { Plus, Search } from "lucide-react"; 
 import { Link } from "react-router-dom";
 import { useState } from "react";
@@ -6,22 +7,26 @@ import { useState } from "react";
 export default function Navbar() {
     const [showSearch, setShowSearch] = useState(false);
     const [searchTerm, setSearchTerm] = useState("");
-    const [exampleChats] = useState([]); // Temporary chat list, to be replaced with real data   
-     
+    const [exampleChats] = useState([]);    // Temporary chat list, to be replaced with real data   
+
+    // Handles Clicking "New Chat" (only temporary use)
     function handleNewChat() {
       console.log("New Chat clicked");
       exampleChats.push(`Chat ${exampleChats.length + 1}`);
     }   
+    // Opens search bar 
     function handleSearchChats() {
       console.log("Search Chats clicked");
       setShowSearch(true);
-    }   
+    }  
+    // Controls when the navbar is open or collapsed
     const [collapsed, setCollapsed] = useState(false);
 
     return (
       <aside className={`navbar ${collapsed ? "collapsed" : ""}`}>
-      {/*/// Top Section ///*/}
+      {/*-----------Top Section-----------*/}
       <div className="navbar-top">
+        {/* Button For New Chat */}
         <button
         className="navbar-btn"
         onClick={handleNewChat}
@@ -31,6 +36,7 @@ export default function Navbar() {
         {!collapsed && <span className="btn-label">New Chat</span>}
         </button>
 
+        {/* Search Chats Button */}
         <button
         className="navbar-btn"
         onClick={() => {
@@ -43,6 +49,7 @@ export default function Navbar() {
         {!collapsed && <span className="btn-label">Search Chats</span>}
         </button>
 
+        {/* Expand and Collapse Button */}
         <button
         className="navbar-btn"
         onClick={() => setCollapsed((s) => !s)}
@@ -55,8 +62,10 @@ export default function Navbar() {
         </button>
       </div>
 
+            {/*-----------Search Pop Up-----------*/}
       {showSearch && (
         <div className="search-pop-up">
+        {/* Search Input Area */}
         <input
           type="text"
           placeholder="Search chats..."
@@ -64,6 +73,7 @@ export default function Navbar() {
           onChange={(e) => setSearchTerm(e.target.value)}
           value={searchTerm}
         />
+        {/* Close Search Pop Up */}
         <button
           className="search-close-btn"
           onClick={() => setShowSearch(false)}
@@ -71,6 +81,8 @@ export default function Navbar() {
         >
           X
         </button>
+            
+        {/*Filter Chat Results Based on User Input*/}
         <div className="table-chats">
           {exampleChats
           .filter((chat) =>
@@ -95,7 +107,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/*/// Chat List ///*/}
+      {/*-----------Chat List (Not Searching)-----------*/}
       {!showSearch && (
         <div className="navbar-chats">
         {exampleChats.map((chat, index) => (
@@ -115,7 +127,7 @@ export default function Navbar() {
         </div>
       )}
 
-      {/*/// Footer ///*/}
+      {/*-----------Footer Navigation-----------*/}
       <footer className="navbar-footer">
         <ul>
         <li>
