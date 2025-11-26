@@ -1,8 +1,34 @@
 {
     "topics": {
         "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"],
-        "writing_techniques": ["sonnet","poem","script","play"]
-    }    
+        "writing_techniques": ["sonnet","poem","script","play"],
+        "comedy_works":[
+            "All's Well That Ends Well",
+            "Alls Well That Ends Well",
+            "All Well That Ends Well",
+            "As You Like It",
+            "Comedy of Errors",
+            "Love's Labour's Lost",
+            "Loves Labours Lost",
+            "Measure for Measure",
+            "Merchant of Venice",
+            "Merry Wives of Windsor",
+            "Midsummer Night's Dream",
+            "Much Ado about Nothing",
+            "Taming of the Shrew",
+            "Tempest","Twelfth Night",
+            "Two Gentlemen of Verona",
+            "Winter's Tale","Winters Tale"
+        ],
+        "histories_work":[
+            "Henry IV",
+            "Henry V",
+            "Henry VI",
+            "Henry VIII",
+            "King John",
+            "Pericles",
+            "Richard II",
+            "Richard III"
+        ]
 
 }
-
