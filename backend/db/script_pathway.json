@@ -1,7 +1,8 @@
 {
     "topics": {
-        "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"]
-
+        "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"],
+        "writing_techniques": ["sonnet","poem","script","play"]
     }    
 
 }
+
