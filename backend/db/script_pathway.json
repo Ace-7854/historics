@@ -1,4 +1,5 @@
-{
+{    
+    
     "topics": {
         "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"],
         "writing_techniques": ["sonnet","poem","script","play"],
@@ -16,7 +17,8 @@
             "Midsummer Night's Dream",
             "Much Ado about Nothing",
             "Taming of the Shrew",
-            "Tempest","Twelfth Night",
+            "Tempest",
+            "Twelfth Night",
             "Two Gentlemen of Verona",
             "Winter's Tale","Winters Tale"
         ],
@@ -29,6 +31,31 @@
             "Pericles",
             "Richard II",
             "Richard III"
-        ]
+        ],
+        "tragedy_works": [
+            "Antony and Cleopatra",
+            "Coriolanus",
+            "Cymbeline",
+            "Hamlet",
+            "Julius Caesar",
+            "King Lear",
+            "Macbeth",
+            "Othello",
+            "Romeo and Juliet",
+            "Timon of Athens",
+            "Titus Andronicus",
+            "Troilus and Cressida"
+        ],
+        "question_opener":["how","what","do you","?","have"]
+
+    },
+
+    "responses":{
+        "greetings":{   }
+
+
+
+
+    }
 
 }
