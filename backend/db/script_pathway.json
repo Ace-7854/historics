@@ -1,5 +1,7 @@
 {
+    "topics": {
+        "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"]
 
+    }    
 
-    
 }
