@@ -13,5 +13,9 @@ app.get("/api/health", (req, res) => {
   console.log("Health check received -> New client activated");
 });
 
+app.post("/api/user", (req, res) => {
+  const data = req.body;
+});
+
 
 app.listen(3001, () => console.log("Backend running on port 3001"));

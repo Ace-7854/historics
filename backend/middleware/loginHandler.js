@@ -6,3 +6,7 @@ function createChatSession (username, password){
     };
     
 }
+
+function AccountLogin () {
+    
+}

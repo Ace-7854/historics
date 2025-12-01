@@ -13,3 +13,11 @@ export async function fetchData() {
     return { status: "fail" };
   }
 }
+
+export async function DataGet() {
+
+}
+
+export function DataPost(data) {
+  
+}
