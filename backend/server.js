@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import accountLogin from "./middleware/loginHandler.js";
 
 dotenv.config();
 const app = express();
@@ -15,6 +16,9 @@ app.get("/api/health", (req, res) => {
 
 app.post("/api/user", (req, res) => {
   const data = req.body;
+  const loginResult = accountLogin(data);
+  res.json(loginResult);
+  console.log("Login attempt for user:", data.username);
 });
 
 

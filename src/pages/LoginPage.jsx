@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 export default function LoginPage() {
     function handleLogin(event) {
         console.log("Login button clicked");
@@ -20,6 +21,7 @@ export default function LoginPage() {
                     </div>
                     <button type="submit" className="lgn-btn" onClick={handleLogin}>Login</button>
                 </form>
+                <p>No account? <Link to="/signup" title="SignUp">SignUp</Link></p>
             </div>
         </div>
     );

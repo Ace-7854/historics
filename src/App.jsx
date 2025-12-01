@@ -13,6 +13,7 @@ import ChatPage from './pages/ChatPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
 import ErrorPage from './pages/error.jsx';
 import NotFound from './pages/404.jsx';
+import SignUp from './pages/SignUp.jsx';
 
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <Routes>
           <Route path="/" element={<ChatPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUp />} />
           <Route path="/error" element={<ErrorPage />} />
           <Route path="*" element={<NotFound />} />
           </Routes>
