@@ -25,7 +25,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #674110;
+  background-color: #D4A857;
   border: 1px solid #1e1603;
   border-radius: 12px;
   padding: 10px 14px;
@@ -40,19 +40,19 @@ body {
   background-color: transparent;
   border: none;
   outline: none;
-  color: #d8c662;
+  color: #E9D8B4;
   font-size: 16px;
   font-family: 'Inter', sans-serif;
   padding: 8px;
 }
 
 .input-area::placeholder {
-  color: #c9b055;
+  color: #000000;
 }
 
 .send-button {
-  background-color: #462c09;
-  color: rgb(255, 255, 255);
+  background-color: #6b1730;
+  color: #E9D8B4;
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
@@ -78,7 +78,7 @@ body {
 .navbar {
   width: 250px;
   height: 100vh;
-  background-color: #120a02;
+  background-color: #D4A857;
   color: #936c31;
   display: flex;
   flex-direction: column;
@@ -270,8 +270,8 @@ body {
 
 .text-area {
   flex: 1;
-  background-color: rgba(35, 22, 2, 0.886);
-  color: #e0e0e0;
+  background-color: #F5E6C8;
+  color: #E9D8B4;
   padding: 20px;
   border-radius: 6px;
   overflow-y: auto;
@@ -284,8 +284,8 @@ body {
   line-height: 1.6;
   font-size: 15px;
 
-  background-color: #452c0be2; /* dark-ish message box */
-  border: 1px solid rgba(179, 15, 15, 0.04);
+  background-color: #6b1730; /* dark-ish message box */
+  border: 1px solid #b3b3b30a;
   border-radius: 10px;
   padding: 10px 12px;
 
@@ -310,7 +310,7 @@ body {
 .login-card {
   width: 100%;
   max-width: 420px;
-  background-color: #3b2414; /* distinct from page bg (rgb(51,6,6)) */
+  background-color: #143b15; /* distinct from page bg (rgb(51,6,6)) */
   color: #f6e7c3;
   border: 1px solid rgba(189, 160, 84, 0.18);
   border-radius: 12px;
@@ -382,7 +382,7 @@ body {
   width: 100%;
   padding: 10px 12px;
   margin-bottom: 8px;
-  background: linear-gradient(180deg,#451605 0%, #2b0e04 100%);
+  background: linear-gradient(180deg,#6b1730 0%, #6b1730 100%);
   border: 1px solid rgba(255,255,255,0.04);
   color: #d8b54b;
   display: flex;
@@ -476,7 +476,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  background: linear-gradient(180deg, #5a3a13 0%, #40260a 100%);
+  background: linear-gradient(180deg, #6b1730 0%, #6b1730 100%);
   color: #f7e9b1;
   border: 1px solid rgba(200, 150, 50, 0.18);
   padding: 10px 14px;
