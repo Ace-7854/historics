@@ -1,10 +1,15 @@
-const API_BASE_URL = "https://api.example.com/v1";
+const API_BASE_URL = "http://localhost:3001";
 
-export async function fetchData(endpoint) {
-    const response = await fetch(`${API_BASE_URL}/${endpoint}`);
+export async function fetchData() {
+  try {
+    const response = await fetch("http://localhost:3001/api/health");
+
     if (!response.ok) {
-        throw new Error("Network response was not ok");
+      return { status: "fail" };
     }
-    return await response.json();
-}
 
+    return await response.json();
+  } catch (err) {
+    return { status: "fail" };
+  }
+}

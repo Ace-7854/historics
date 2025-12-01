@@ -1,8 +1,8 @@
-export default function ErrorPage() {
+export default function ErrorPage({error = "An unexpected error has occurred."}) {
     return (
         <div style={{ textAlign: 'center', marginTop: '50px' }}>
             <h1>Error Occurred</h1>
-            <p>Sorry, an unexpected error has occurred. Please try again later.</p>
+            <p>{error}</p>
         </div>
     );
 }
