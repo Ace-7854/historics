@@ -4,6 +4,8 @@ import './App.css'
 import './index.css'
 import ChatPage from './pages/ChatPage.jsx';
 import LoginPage from './pages/LoginPage.jsx';
+import ErrorPage from './pages/error.jsx';
+import NotFound from './pages/404.jsx';
 
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
         <Routes>
           <Route path="/" element={<ChatPage />} />
           <Route path="/login" element={<LoginPage />} />
-          {/* <Route path="/chat" element={} /> */}
-        </Routes>
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="*" element={<NotFound />} />
+          </Routes>
     </Router>
     
     </>
