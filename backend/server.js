@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import accountLogin from "./middleware/loginHandler.js";
+import AccountLogin from "./middleware/loginHandler.js";
 
 dotenv.config();
 const app = express();
@@ -16,10 +16,16 @@ app.get("/api/health", (req, res) => {
 
 app.post("/api/user", (req, res) => {
   const data = req.body;
-  const loginResult = accountLogin(data);
+  const loginResult = AccountLogin(data);
   res.json(loginResult);
   console.log("Login attempt for user:", data.username);
 });
 
+
+app.post("/api/message", (req, res) => {
+  const data = req.body;
+  console.log("Message received:", data);
+  
+});
 
 app.listen(3001, () => console.log("Backend running on port 3001"));

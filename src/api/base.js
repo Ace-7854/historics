@@ -18,6 +18,20 @@ export async function DataGet() {
 
 }
 
-export function DataPost(data) {
+export async function sendMessageToServer(location = "api/message", data) {
   
+  const path = `${API_BASE_URL}/${location}`;
+  const res = await fetch(path, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(data)
+  });
+  
+  if (!res.ok) {
+    return { status: "fail" };
+  }
+
+  return res.json();
 }
