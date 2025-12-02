@@ -27,7 +27,7 @@
     
     
     "topics": {
-        "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"],
+        "greetings": ["hi","hey","hello","good morning","good evening"],
         "writing_techniques": ["sonnet","poem","script","play"],
         "comedy_works":[
             "All's Well That Ends Well",
@@ -46,7 +46,8 @@
             "Tempest",
             "Twelfth Night",
             "Two Gentlemen of Verona",
-            "Winter's Tale","Winters Tale"
+            "Winter's Tale",
+            "Winters Tale"
         ],
         "histories_work":[
             "Henry IV",
@@ -82,9 +83,7 @@
             "hello": "All hail to thee! Welcome, welcome! Pray, what dost thou wish to know of mine works and days?",
             "hey": "Ho there! What excellent timing! I was just pondering the nature of words and wit. What brings thee hence?",
             "good morning": "Good morrow to thee! The sun doth break upon a new day of learning and merriment. How may I serve thee?",
-            "good evening": "Good even! The twilight hours are finest for discourse upon matters of the heart and soul. What shall we discuss?",
-            "howdy": "Prithee, art thou a friend from distant lands? Well met, well met indeed! Come, let us share in learned conversation.",
-            "yo": "Zounds! A greeting most spirited! I do admire thy boldness. Speak freely—what desire thee of William Shakespeare?"
+            "good evening": "Good even! The twilight hours are finest for discourse upon matters of the heart and soul. What shall we discuss?"
         },
         "writing_techniques":{
             "sonnet": "Ah, the sonnet! Fourteen lines of pure distilled passion and wit. I have crafted many a sonnet to capture love's essence and time's cruelty. Dost thou wish to learn the structure of this noble form?",
@@ -108,7 +107,8 @@
             "Tempest": "The Tempest! Mine own farewell to the stage, a work of forgiveness and wonder. Magic, shipwrecks, and a father's vengeance tempered by mercy—dost thou not see thyself in Prospero's journey?",
             "Twelfth Night": "Love, disguise, and mistaken identity! Viola's plight shows how fragile the identity we present truly is. In confusion lies clarity of the heart.",
             "Two Gentlemen of Verona": "Valentine and Proteus! Two friends torn asunder by love and ambition. Yet true friendship endureth and triumphs in the end, showing that bonds of brotherhood transcend romantic passion.",
-            "Winter's Tale": "A tale of loss and redemption! Leontes' jealous madness destroys all he holds dear, yet time and fate bring forth a daughter to heal old wounds. Sixteen years pass like a winter made spring again."
+            "Winter's Tale": "A tale of loss and redemption! Leontes' jealous madness destroys all he holds dear, yet time and fate bring forth a daughter to heal old wounds. Sixteen years pass like a winter made spring again.",
+            "Winters Tale": "A tale of loss and redemption! Leontes' jealous madness destroys all he holds dear, yet time and fate bring forth a daughter to heal old wounds. Sixteen years pass like a winter made spring again."
         },
         "tragedy_works":{
             "Antony and Cleopatra": "A love that defies empires! Mark Antony abandons duty for passion, and Cleopatra—queen supreme—chooseth death rather than captivity. Their love burns so bright it consumeth two great souls.",
