@@ -21,6 +21,7 @@ export async function DataGet() {
 export async function sendMessageToServer(location = "api/message", data) {
   
   const path = `${API_BASE_URL}/${location}`;
+  console.log("Sending to:", path, "Data:", data);
   const res = await fetch(path, {
     method: "POST",
     headers: {

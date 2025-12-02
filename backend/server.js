@@ -23,9 +23,9 @@ app.post("/api/user", (req, res) => {
 
 
 app.post("/api/message", (req, res) => {
-  const data = req.body;
   console.log("Message received:", data);
-  
+  const data = req.body;
+  res.json({ reply: `Echo: ${data}` });
 });
 
 app.listen(3001, () => console.log("Backend running on port 3001"));

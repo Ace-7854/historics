@@ -16,7 +16,7 @@ export default function ChatPage() {
         setLoading(true);
 
         try {
-            const response = await sendMessageToServer(text);
+            const response = await sendMessageToServer(data=text);
 
             const serverMessage = { role: "assistant", text: response.reply };
             setMessages(prevMsgs => [...prevMsgs, serverMessage]);
