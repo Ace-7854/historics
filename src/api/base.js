@@ -18,21 +18,17 @@ export async function DataGet() {
 
 }
 
-export async function sendMessageToServer(location = "api/message", data) {
-  
-  const path = `${API_BASE_URL}/${location}`;
-  console.log("Sending to:", path, "Data:", data);
-  const res = await fetch(path, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  });
-  
-  if (!res.ok) {
-    return { status: "fail" };
-  }
+export async function sendMessageToServer(text) {
+    try {
+        const response = await fetch("http://localhost:3000/api/message", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: text })   // <<< FIXED
+        });
 
-  return res.json();
+        return await response.json();
+    } catch (error) {
+        console.error("Error sending message:", error);
+        return { reply: "Server error ❌" };
+    }
 }

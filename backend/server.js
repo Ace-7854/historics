@@ -23,9 +23,16 @@ app.post("/api/user", (req, res) => {
 
 
 app.post("/api/message", (req, res) => {
-  console.log("Message received:", data);
   const data = req.body;
-  res.json({ reply: `Echo: ${data}` });
+
+  console.log("Message received:", data);
+
+  res.json({
+    role: "bot",
+    text: data.message // frontend expects "text"
+  });
 });
+
+
 
 app.listen(3001, () => console.log("Backend running on port 3001"));

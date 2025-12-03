@@ -278,6 +278,20 @@ body {
   margin-bottom: 20px; /* Space above the type-box */
 }
 
+.user-msg {
+    align-self: flex-end;
+    background-color: #3a3a3a;
+    color: white;
+    border-bottom-right-radius: 0;
+}
+
+.bot-msg {
+    align-self: flex-start;
+    background-color: #222;
+    color: #e3e3e3;
+    border-bottom-left-radius: 0;
+}
+
 .text-area .message {
   color: rgb(219, 205, 96);
   margin: 0 0 12px;

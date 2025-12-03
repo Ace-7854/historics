@@ -8,25 +8,19 @@ export default function ChatPage() {
     const [loading, setLoading] = useState(false);
 
     async function handleMessageSend(text) {
-        // 1. Add user message immediately
+        // User message
         const userMessage = { role: "user", text };
-        setMessages(prevMsgs => [...prevMsgs, userMessage]);
+        setMessages(prev => [...prev, userMessage]);
 
-        // 2. Show loader
         setLoading(true);
 
-        try {
-            const response = await sendMessageToServer(data=text);
+        // Send raw text to server
+        const response = await sendMessageToServer(text);
 
-            const serverMessage = { role: "assistant", text: response.reply };
-            setMessages(prevMsgs => [...prevMsgs, serverMessage]);
-
-        } catch (err) {
-            // If server fails
-            setMessages(prevMsgs => [
-                ...prevMsgs,
-                { role: "assistant", text: "❌ Server error." }
-            ]);
+        // Bot message
+        if (response && response.reply) {
+            const botMessage = { role: "bot", text: response.reply };
+            setMessages(prev => [...prev, botMessage]);
         }
 
         setLoading(false);
@@ -34,13 +28,8 @@ export default function ChatPage() {
 
     return (
         <div className="chat-page">
-            <TextBox 
-                messages={messages}
-                loading={loading}   // send loader status
-            />
-            <TypeBox 
-                onSend={handleMessageSend}
-            />
+            <TextBox messages={messages} loading={loading} />
+            <TypeBox onSend={handleMessageSend} />
         </div>
     );
 }
