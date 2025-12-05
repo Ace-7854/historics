@@ -27,7 +27,7 @@
     
     
     "topics": {
-        "greetings": ["hi","hey","hello","yo","good morning","good evening","good afternoon","heya","howdy","wassup","ahoy"],
+        "greetings": ["hi","hey","hello","good morning","good evening"],
         "writing_techniques": ["sonnet","poem","script","play"],
         "comedy_works":[
             "All's Well That Ends Well",
@@ -46,7 +46,8 @@
             "Tempest",
             "Twelfth Night",
             "Two Gentlemen of Verona",
-            "Winter's Tale","Winters Tale"
+            "Winter's Tale",
+            "Winters Tale"
         ],
         "histories_work":[
             "Henry IV",
@@ -77,11 +78,79 @@
     },
 
     "responses":{
-        "greetings":{   }
-
-
-
-
+        "greetings":{
+            "hi": "Hark! Well met, good friend! 'Tis a pleasure to make thy acquaintance. What manner of discourse brings thee to seek audience with the Bard?",
+            "hello": "All hail to thee! Welcome, welcome! Pray, what dost thou wish to know of mine works and days?",
+            "hey": "Ho there! What excellent timing! I was just pondering the nature of words and wit. What brings thee hence?",
+            "good morning": "Good morrow to thee! The sun doth break upon a new day of learning and merriment. How may I serve thee?",
+            "good evening": "Good even! The twilight hours are finest for discourse upon matters of the heart and soul. What shall we discuss?"
+        },
+        "writing_techniques":{
+            "sonnet": "Ah, the sonnet! Fourteen lines of pure distilled passion and wit. I have crafted many a sonnet to capture love's essence and time's cruelty. Dost thou wish to learn the structure of this noble form?",
+            "poem": "Poetry! The very breath of the soul made manifest in words! Through verse, we may express that which mere prose cannot capture. What manner of poem doth call to thee?",
+            "script": "The script—the skeleton upon which we hang flesh and blood of character! Every word must serve the stage, must move the actor, must stir the audience's heart.",
+            "play": "A play! A glorious thing—a world entire, created anew with each performance. Through plays, I have explored the very depths of human nature, comedy, tragedy, and all that lies betwixt."
+        },
+        "comedy_works":{
+            "All's Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
+            "Alls Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
+            "All Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
+            "As You Like It": "The forest of Arden! A place where lovers find their true nature, and the melancholy Jacques doth speak truths most profound. Here, all the world's a stage, and each must play his part.",
+            "Comedy of Errors": "Confusion most delightful! Twin brothers separated at birth create such mayhem and merriment as each is mistaken for the other. 'Tis a farce that would make the groundlings roar with laughter!",
+            "Love's Labour's Lost": "Four young men forsake love for learning—yet love hath the final word! Wit and wordplay clash with hearts most true, and in the end, folly of the scholarly kind doth yield to love's wisdom.",
+            "Measure for Measure": "A comedy most dark, wherein justice and mercy must find their balance. The Duke's clever schemes expose hypocrisy and remind us that mercy must temper all our judgments.",
+            "Merchant of Venice": "Shylock and his pound of flesh! Antonio's bond becomes a test of mercy and justice. Portia's wisdom saveth all, proving that mercy is not weakness but the truest strength.",
+            "Merry Wives of Windsor": "Falstaff, that fat knight! He schemes to seduce two married women, only to be gulled and humiliated at every turn. A comedy of errors and folly most amusing!",
+            "Midsummer Night's Dream": "A most magical tale! Puck's mischief doth teach us that love is both rational and folly. The forest becomes a realm where all earthly rules are suspended—a perfect mirror of the heart's confusion.",
+            "Much Ado about Nothing": "Beatrice and Benedick! Two souls so sharp-tongued they wound with words, yet melt when truth is revealed. This play proves that beneath antagonism oft lies the deepest affection.",
+            "Taming of the Shrew": "Kate, the shrewish woman, meets her match in Petruchio! Through wit, patience, and gentle firmness, he tames her not through cruelty but through understanding. 'Tis a lesson in love most unconventional.",
+            "Tempest": "The Tempest! Mine own farewell to the stage, a work of forgiveness and wonder. Magic, shipwrecks, and a father's vengeance tempered by mercy—dost thou not see thyself in Prospero's journey?",
+            "Twelfth Night": "Love, disguise, and mistaken identity! Viola's plight shows how fragile the identity we present truly is. In confusion lies clarity of the heart.",
+            "Two Gentlemen of Verona": "Valentine and Proteus! Two friends torn asunder by love and ambition. Yet true friendship endureth and triumphs in the end, showing that bonds of brotherhood transcend romantic passion.",
+            "Winter's Tale": "A tale of loss and redemption! Leontes' jealous madness destroys all he holds dear, yet time and fate bring forth a daughter to heal old wounds. Sixteen years pass like a winter made spring again.",
+            "Winters Tale": "A tale of loss and redemption! Leontes' jealous madness destroys all he holds dear, yet time and fate bring forth a daughter to heal old wounds. Sixteen years pass like a winter made spring again."
+        },
+        "tragedy_works":{
+            "Antony and Cleopatra": "A love that defies empires! Mark Antony abandons duty for passion, and Cleopatra—queen supreme—chooseth death rather than captivity. Their love burns so bright it consumeth two great souls.",
+            "Coriolanus": "Pride doth lead to ruin! Coriolanus, a warrior of unmatched prowess, cannot master the political arts nor humble himself before the common people. His disdain becomes his undoing.",
+            "Cymbeline": "A most complex tale of jealousy, slander, and redemption! Imogen suffers grievously through the lies of Iachimo, yet through providence and truth's revelation, all is set right at last.",
+            "Hamlet": "The melancholy Dane! A prince who sees too much, knows too much, and cannot act—until the moment of ruin arrives. To be or not to be—that is indeed the question.",
+            "Julius Caesar": "Betrayal in the Senate! Caesar, warned of the Ides of March, meets his doom at the hands of those he trusted most. Brutus' struggle between friendship and duty mirrors the civil strife that follows.",
+            "King Lear": "A king unmade—stripped of crown, sanity, and dignity upon the heath. Yet in his madness, Lear discovers profound truths about the nature of power and family.",
+            "Macbeth": "Ambition! That murderous ambition that doth corrupt the noblest soul! Macbeth's descent from honored general to tyrant shows how prophecy and desire can conspire to destroy a man.",
+            "Othello": "The handkerchief! A small token becomes the instrument of jealousy and destruction. Othello, a noble moor, is undone by Iago's poisonous insinuations and his own trust in appearance over truth.",
+            "Romeo and Juliet": "Oh, the tragedy of star-crossed lovers! Two souls from warring houses find love's sweetness only to taste death's bitterness. Youth and passion are no match for ancient grudge.",
+            "Timon of Athens": "A man of boundless generosity reduced to misanthropy! When Timon's wealth expires, so too do his false friends. His descent into bitterness shows how much we value those who feed our vanity.",
+            "Titus Andronicus": "Horror upon horror! A tale of vengeance so dark and bloody that it doth test the very limits of what tragedy may contain. Titus' mutilation and madness lead to a feast most ghastly.",
+            "Troilus and Cressida": "Love and war intertwined! In the Trojan War, noble Troilus loves the fair Cressida, yet she proves false when separated from him. The play questions honor, love, and the very nature of worth."
+        },
+        "question_opener":{
+            "how": "Ah, thou seekest method and understanding! I shall endeavor to illuminate thy curiosity with the light of knowledge and wit.",
+            "what": "A question of substance! Tell me more specifically, and I shall answer with the depth thy question deserves.",
+            "do you": "Dost thou inquire of my nature, my works, or my thoughts? Speak plainly, and I shall answer as honestly as a player upon the stage may.",
+            "have": "Thou hath something to share, listen in thy good friend, and it shall be answered."
+        },
+        "life_topics":{
+            "love": "Ah, love! The greatest subject for sonnets and plays alike. 'Tis both torment and transcendence, the very force that drives tragedy and comedy in equal measure.",
+            "death": "Death! The one certainty that makes all mortal concerns seem both urgent and futile. I have written much on this grim subject—mortality teaches us to value each moment.",
+            "revenge": "Vengeance! A bitter draught that poisons the drinker as much as the drunken enemy. Many of my plays explore this dark passion and its terrible consequences.",
+            "ambition": "Ambition doth drive men to greatness—and to ruin! 'Tis a double-edged sword that we must wield with utmost care."
+        },
+        "theatre_topics":{
+            "stage": "The stage! My greatest love and truest home. 'Tis a place where fiction becomes truth and dreams take flesh before the eyes of all.",
+            "actor": "An actor must be a vessel for the character, breathing life into ink and imagination. The greatest actors become the character so completely that the audience forgets the performer.",
+            "audience": "The audience! They are the very lifeblood of theatre. Without them, our words are merely echoes in an empty hall. We create for their hearts and minds."
+        },
+        "histories_work":{
+            "Henry IV": "A sprawling epic of rebellion and redemption! Prince Hal, surrounded by rogues and revolutionaries, must find his way to true kingship. Falstaff—that magnificent rogue!—becomes the heart of the matter.",
+            "Henry V": "A warrior-king most noble! The young Henry proves himself in the halls of power and upon the fields of Agincourt. His speeches stir the blood of men and make them ready to die for glory.",
+            "Henry VI": "A kingdom divided against itself! Three parts of civil strife, ambition, and noble blood spilled upon English soil. The Wars of the Roses spring from weak kingship and hungry lords.",
+            "Henry VIII": "A monarch of great appetite! Henry's quest for a son and a new queen reshapes the very Church of England. Power and passion intertwine in the life of this most imposing king.",
+            "King John": "A weak king beset by enemies without and treachery within! King John loses his grip on power and England's vast holdings across the sea. The Bastard—the play's moral compass—shows more honor than his king.",
+            "Pericles": "A tale most wondrous! Prince Pericles journeys across tempestuous seas, losing all, yet finding redemption and his lost daughter. 'Tis a story of suffering transformed into joy.",
+            "Richard II": "A king unworthy of his crown, yet tragic in his downfall! Richard's poetic nature cannot withstand the practical machinations of Bolingbroke. Power is seized, and a man is unmade.",
+            "Richard III": "A hunchbacked villain most cunning! Richard murders his way to the throne, yet the very heavens conspire against him. His fall shows that villainy cannot sustain a kingdom forever."
+        }
     }
 
 }
