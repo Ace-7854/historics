@@ -33,8 +33,8 @@ function accountLogin (body) {
 
 export default accountLogin;
 
-const test = {
-    username: "HughWooll",
-    password: "hashed_password_001"
-};
-accountLogin(test);
+// const test = {
+//     username: "HughWooll",
+//     password: "hashed_password_001"
+// };
+// accountLogin(test);
