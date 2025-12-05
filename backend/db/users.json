@@ -1,7 +1,7 @@
 {
   "users": [
     {
-        "email": "bardlover@example.com",
+        "username": "bardlover@example.com",
         "password": "hashed_password_001",
         "chats": [
         {
@@ -97,7 +97,7 @@
       ]
     },
     {
-        "email": "scholar@example.com",
+        "username": "scholar@example.com",
         "password": "hashed_password_002",
         "chats": [
         {
@@ -193,7 +193,7 @@
       ]
     },
     {
-        "email": "romance@example.com",
+        "username": "romance@example.com",
         "password": "hashed_password_003",
         "chats": [
         {
