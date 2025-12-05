@@ -5,7 +5,7 @@ export default function TextBox({ messages, loading }) {
             {messages.map((msg, index) => (
                 <div
                     key={index}
-                    className={`message ${msg.role === "user" ? "user-msg" : "bot-msg"}`}
+                    className={`${msg.role === "user" ? "user-msg" : "bot-msg"}`}
                 >
                     {msg.text}
                 </div>

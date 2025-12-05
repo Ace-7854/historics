@@ -8,23 +8,28 @@ export default function ChatPage() {
     const [loading, setLoading] = useState(false);
 
     async function handleMessageSend(text) {
-        // User message
+        // Add user message immediately
         const userMessage = { role: "user", text };
         setMessages(prev => [...prev, userMessage]);
 
         setLoading(true);
 
-        // Send raw text to server
+        // Send raw text to your server
         const response = await sendMessageToServer(text);
 
-        // Bot message
-        if (response && response.reply) {
-            const botMessage = { role: "bot", text: response.reply };
+        console.log("Raw server response:", response);
+
+        // ADD THIS — server returns { role: "bot", text: "..." }
+        if (response && response.text) {
+            const botMessage = { role: "bot", text: response.text };
             setMessages(prev => [...prev, botMessage]);
+        } else {
+            console.warn("Server returned no text field");
         }
 
         setLoading(false);
     }
+
 
     return (
         <div className="chat-page">

@@ -20,15 +20,22 @@ export async function DataGet() {
 
 export async function sendMessageToServer(text) {
     try {
-        const response = await fetch("http://localhost:3000/api/message", {
+        const response = await fetch("http://localhost:3001/api/message", {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ message: text })   // <<< FIXED
+            headers: { 
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ message: text })
         });
 
-        return await response.json();
-    } catch (error) {
-        console.error("Error sending message:", error);
-        return { reply: "Server error ❌" };
+        // --- CRITICAL ---
+        const data = await response.json(); 
+        console.log("Parsed server JSON:", data);
+
+        return data;
+    } catch (err) {
+        console.error("Error sending message:", err);
+        return { role: "bot", text: "Error contacting server." };
     }
 }
+
