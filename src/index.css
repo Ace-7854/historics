@@ -278,36 +278,53 @@ body {
   margin-bottom: 20px; /* Space above the type-box */
 }
 
-.user-msg {
-  content:"USER: ";
-  align-self: flex-end;
-  background-color: #3a3a3a;
-  color: white;
-  border-bottom-right-radius: 0;
-}
-
+.user-msg,
 .bot-msg {
-  content:"BOT: ";
-  align-self: flex-start;
-  background-color: #222;
-  color: #e3e3e3;
-  border-bottom-left-radius: 0;
+  margin-top: 1%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    max-width: 75%;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+
+    border: 1px solid #3A3A3A; /* helps bubble shape remain in high-contrast modes */
 }
 
-.text-area .message {
-  color: rgb(219, 205, 96);
-  margin: 0 0 12px;
-  line-height: 1.6;
-  font-size: 15px;
+/* ---------- USER MESSAGE ---------- */
+.user-msg {
+    align-self: flex-end;
 
-  background-color: #6b1730; /* dark-ish message box */
-  border: 1px solid #b3b3b30a;
-  border-radius: 10px;
-  padding: 10px 12px;
+    background-color: #1C1C1C; /* dark grey */
+    color: #FFFFFF;
+}
 
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.6), 0 6px 18px rgba(0, 0, 0, 0.25);
-  overflow-wrap: anywhere;
-  white-space: pre-wrap;
+/* Add readable speaker label */
+.user-msg::before {
+    content: "You: ";
+    font-weight: 600;
+    margin-right: 4px;
+    color: #79B8FF; /* accessible blue accent */
+}
+
+/* ---------- BOT MESSAGE ---------- */
+.bot-msg {
+    align-self: flex-start;
+
+    background-color: #202225; /* slightly different tone to differentiate */
+    color: #F1F1F1;
+}
+
+.bot-msg::before {
+    content: "Shakespeare: ";
+    font-weight: 600;
+    margin-right: 4px;
+    color: #E0C570; /* accessible warm accent */
+}
+
+/* Optional: keyboard accessibility outline */
+.user-msg:focus,
+.bot-msg:focus {
+    outline: 3px solid #8A5CF6; /* purple accessible focus color */
 }
 
 .login-page {

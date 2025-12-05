@@ -7,7 +7,7 @@ export default function TextBox({ messages, loading }) {
                     key={index}
                     className={`${msg.role === "user" ? "user-msg" : "bot-msg"}`}
                 >
-                    {msg.text}
+                    {`${msg.text}`}
                 </div>
             ))}
 
