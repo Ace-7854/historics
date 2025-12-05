@@ -1,3 +1,8 @@
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
 function createChatSession (username, password){
     const chatSessions = {
         username: username,
@@ -7,16 +12,19 @@ function createChatSession (username, password){
     
 }
 
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 function accountLogin (body) {
     const { username, password } = body;
 
     const users = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "db", "users.json"), "utf8"));
 
-    // Finding specific users by email 
+    // Finding specific user by email 
     const user = users.find(u => u.username === username);
 
     if (!user) {
-        console.log("User not found");
+        console.log("Username: ",username, " not found");
         return {
             success: false,
             message: "User not found"
