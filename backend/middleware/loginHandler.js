@@ -50,3 +50,6 @@ function accountLogin (body) {
     };
 
 }
+export default function AccountLogin (body) {
+    
+}
