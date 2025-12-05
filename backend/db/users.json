@@ -1,6 +1,6 @@
 [
   {
-    "username": "bardlover@example.com",
+    "username": "HughWooll",
     "password": "hashed_password_001",
     "chats": [
       {
@@ -96,7 +96,7 @@
     ]
   },
   {
-    "username": "scholar@example.com",
+    "username": "Edison",
     "password": "hashed_password_002",
     "chats": [
       {
@@ -192,7 +192,7 @@
     ]
   },
   {
-    "username": "romance@example.com",
+    "username": "James",
     "password": "hashed_password_003",
     "chats": [
       {
