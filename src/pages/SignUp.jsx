@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from 'react-router-dom';
 
 export default function SignUp() {
-    
     const [signUp, setSignUp] = useState(false);
     const [error, setError] = useState(null);
 
