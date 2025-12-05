@@ -31,8 +31,10 @@ function accountLogin (body) {
 
 }
 
-// const test = {
-//     username: "HughWooll",
-//     password: "hashed_password_002"
-// };
-// accountLogin(test);
+export default accountLogin;
+
+const test = {
+    username: "HughWooll",
+    password: "hashed_password_001"
+};
+accountLogin(test);
