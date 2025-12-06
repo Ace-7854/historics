@@ -1,3 +1,5 @@
+import checkUsernamePassword from "./validate.js";
+
 function createChatSession (username, password){
     const chatSessions = {
         username: username,
@@ -7,6 +9,32 @@ function createChatSession (username, password){
     
 }
 
-export default function AccountLogin (body) {
-    
+function accountLogin (body) {
+    const { username, password } = body;
+
+    if (checkUsernamePassword(username, password)) {
+        return {
+            success: true,
+            message: "Login Successful",
+            user: {
+                username: username,
+                chats: [] // Placeholder for user chats
+            }
+        };
+    }
+    else {
+        return {
+            success: false,
+            message: "Incorrect Password"
+        };
+    };
+
 }
+
+export default accountLogin;
+
+// const test = {
+//     username: "HughWooll",
+//     password: "hashed_password_001"
+// };
+// accountLogin(test);
