@@ -10,6 +10,7 @@ export default function Navbar() {
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [exampleChats, setExampleChats] = useState([]);    // Temporary chat list, to be replaced with real data   
+ 
   // Handles Clicking "New Chat" (only temporary use)
   function handleNewChat() {
     console.log("New Chat clicked");
