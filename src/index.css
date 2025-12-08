@@ -387,7 +387,8 @@ body {
 
 /* Expand chat/login when navbar is collapsed (assumes navbar is a preceding sibling) */
 .navbar.collapsed ~ .chat-page,
-.navbar.collapsed ~ .login-page {
+.navbar.collapsed ~ .login-page, 
+.navbar.collapsed ~ .signup-page {
   width: calc(100% - 72px);
   transition: width 180ms ease;
 }
