@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
+import { loginUser } from '../api/base.js';
+
 export default function LoginPage() {
-    function handleLogin(event) {
+
+    function handleLogin() {
         console.log("Login button clicked");
-        //insert means of sending login data to backend here
-        event.preventDefault(); // Prevent form submission
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const credentials = { username, password };
+        loginUser(credentials).then((data) => {
+            console.log("Login result:", data);
+            // Handle login result (e.g., redirect on success)
+        });
     }
 
     return (

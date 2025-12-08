@@ -39,3 +39,33 @@ export async function sendMessageToServer(text) {
     }
 }
 
+export async function loginUser(credentials) {
+  const response = await fetch(`${API_BASE_URL}/api/user`, 
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: credentials
+    }
+  )
+  const data = await response.json();
+  console.log("Login response data:", data); 
+  return data;
+}
+
+export async function signupUser(credentials) {
+  const response = await fetch("http://localhost:3001/api/signup", 
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(JSON.parse(credentials)),
+    }
+  );  
+
+  const data = await response.json();
+  console.log(`Signup response data: ${data.status? data.status : 'no status'}`);
+  return data;
+}
