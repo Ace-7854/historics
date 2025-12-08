@@ -443,6 +443,8 @@ body {
 /* hover/active refinements */
 .navbar-btn:hover { transform: translateY(-2px); filter: brightness(1.04); }
 .navbar-btn:active { transform: translateY(0); filter: brightness(0.98); }
+.navbar-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
 
 /* Collapsed navbar: shrink width and show compact icon-only buttons */
 .navbar.collapsed {
