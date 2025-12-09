@@ -1,8 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import AccountLogin from "./middleware/loginHandler.js";
-import MessageHandler from "./middleware/api_handler.js";
+import accountLogin from "./middleware/loginHandler.js";
+import {addUsers} from "./config/db_handler.js";
+import { hashPassword } from "./security/hash.js";
 
 dotenv.config();
 const app = express();
@@ -15,17 +16,16 @@ app.get("/api/health", (req, res) => {
   console.log("Health check received -> New client activated");
 });
 
-app.post("/api/user", (req, res) => {
+app.post("/api/login", (req, res) => {
   const data = req.body;
   console.log("Login attempt for user:", data.username);
-  // const loginResult = AccountLogin(data);
-  // res.json(loginResult);
+  const loginResult = accountLogin(data);
+  res.json(loginResult);
 });
 
 
 app.post("/api/message", (req, res) => {
   const data = req.body;
-
   console.log("Message received:", data);
   // const message = MessageHandler(data.message);
   res.json({
@@ -34,15 +34,16 @@ app.post("/api/message", (req, res) => {
   });
 });
 
-app.post("/api/signup", (req, res) => {
+app.post("/api/signup", async (req, res) => {
   const data = req.body;
   console.log("Signup attempt for user:", data.username);
-  // const signupResult = AccountSignup(data);
-  // res.json(signupResult);
-  if (data.username && data.password) {
-    res.json({ status: "success", message: "User signed up successfully" });
-  } else {
-    res.json({ status: "fail", message: "Invalid signup data" });
+  try {
+    data.password = await hashPassword(data.password);
+    const signupResult = addUsers(data.username, data.password);
+    res.json({ status: 'success', message: 'Signup successful' });
+  }
+  catch (error) {
+    res.json({ status: error, message: "Signup failed" });
   }
 });
 

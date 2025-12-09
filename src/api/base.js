@@ -40,7 +40,7 @@ export async function sendMessageToServer(text) {
 }
 
 export async function loginUser(credentials) {
-  const response = await fetch(`${API_BASE_URL}/api/user`, 
+  const response = await fetch(`${API_BASE_URL}/api/login`, 
     {
       method: "POST",
       headers: {
@@ -61,11 +61,17 @@ export async function signupUser(credentials) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(JSON.parse(credentials)),
-    }
-  );  
+      body: credentials,
+    });  
 
   const data = await response.json();
-  console.log(`Signup response data: ${data.status? data.status : 'no status'}`);
-  return data;
+  if (data.status === 'success') {
+    console.log("Signup successful:", data);
+    return true;
+  }
+  else {
+    console.log("Signup failed:", data);
+    return false;
+  }
+
 }

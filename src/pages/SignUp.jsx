@@ -33,6 +33,9 @@ export default function SignUp() {
             alert("Sign-up successful! Please log in.");
             navigate("/Login");
         }
+        else {
+            document.querySelector(".error-label").textContent = "Sign-up failed. Username may already exist.";
+        }
     }
 }
 
