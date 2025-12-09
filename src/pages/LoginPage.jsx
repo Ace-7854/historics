@@ -1,9 +1,22 @@
 import { Link } from 'react-router-dom';
+import { loginUser } from '../api/base.js';
+
 export default function LoginPage() {
-    function handleLogin(event) {
+
+    function handleLogin(e) {
+        e.preventDefault(); // <-- stop the form from reloading
+        
         console.log("Login button clicked");
-        //insert means of sending login data to backend here
-        event.preventDefault(); // Prevent form submission
+    
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+    
+        const credentials = { username, password };
+        console.log("Credentials to be sent:", credentials);
+    
+        loginUser(credentials).then((data) => {
+            console.log("Login result:", data);
+        });
     }
 
     return (
@@ -19,7 +32,7 @@ export default function LoginPage() {
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" name="password" required />
                     </div>
-                    <button type="submit" className="lgn-btn" onClick={handleLogin}>Login</button>
+                    <button className="lgn-btn" onClick={handleLogin}>Login</button>
                 </form>
                 <p>No account? <Link to="/signup" title="SignUp">SignUp</Link></p>
             </div>

@@ -39,3 +39,39 @@ export async function sendMessageToServer(text) {
     }
 }
 
+export async function loginUser(credentials) {
+  const response = await fetch(`http://localhost:3001/api/login`, 
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+    }
+  )
+  const data = await response.json();
+  console.log("Login response data:", data); 
+  return data;
+}
+
+export async function signupUser(credentials) {
+  const response = await fetch("http://localhost:3001/api/signup", 
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: credentials,
+    });  
+
+  const data = await response.json();
+  if (data.status === 'success') {
+    console.log("Signup successful:", data);
+    return true;
+  }
+  else {
+    console.log("Signup failed:", data);
+    return false;
+  }
+
+}
