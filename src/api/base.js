@@ -40,13 +40,13 @@ export async function sendMessageToServer(text) {
 }
 
 export async function loginUser(credentials) {
-  const response = await fetch(`${API_BASE_URL}/api/login`, 
+  const response = await fetch(`http://localhost:3001/api/login`, 
     {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: credentials
+      body: JSON.stringify(credentials)
     }
   )
   const data = await response.json();

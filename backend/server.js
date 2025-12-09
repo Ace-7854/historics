@@ -18,7 +18,9 @@ app.get("/api/health", (req, res) => {
 
 app.post("/api/login", (req, res) => {
   const data = req.body;
-  console.log("Login attempt for user:", data.username);
+
+  console.log("Login attempt for user:", data);
+  
   const loginResult = accountLogin(data);
   res.json(loginResult);
 });

@@ -37,6 +37,7 @@ export function addUsers(username, password) {
 
 export function findUser(username) {
     const users = loadUsers();
-    return users.map(user => user.filter(u => u.username === username)[0]);
+    const user = users.find(u => u.username === username);
+    return user;
 }
 
