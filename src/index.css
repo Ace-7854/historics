@@ -370,7 +370,6 @@ body {
 
 /* Inputs inside form-group */
 .form-group input[type="text"],
-.form-group input[type="email"],
 .form-group input[type="password"],
 .form-group textarea,
 .form-group select {
@@ -388,7 +387,8 @@ body {
 
 /* Expand chat/login when navbar is collapsed (assumes navbar is a preceding sibling) */
 .navbar.collapsed ~ .chat-page,
-.navbar.collapsed ~ .login-page {
+.navbar.collapsed ~ .login-page, 
+.navbar.collapsed ~ .signup-page {
   width: calc(100% - 72px);
   transition: width 180ms ease;
 }
@@ -674,4 +674,119 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+/*///////////////////////////////////Sign Up Page//////////////////////////////////////////*/
+/* Container */
+.signup-page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: calc(100% - 250px);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #330606 0%, #0d0d0d 100%);
+  transition: width 180ms ease;
+}
+
+.signup-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d1515 100%);
+  color: #f6e7c3;
+  border: 2px solid #8b6914;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 10px 40px rgba(139, 105, 20, 0.3), inset 0 1px 0 rgba(255, 215, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Title */
+.signup-form .form-title {
+    text-align: center;
+    color: gold;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Labels */
+.signup-form label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #ccc;
+}
+
+/* Inputs */
+.signup-form input {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 2px solid #333;
+    background: #2a2a2a;
+    color: #f5f5f5;
+    transition: 0.25s border ease;
+}
+
+/* Input focus */
+.signup-form input:focus {
+    border-color: gold;
+    outline: none;
+    box-shadow: 0 0 4px gold;
+}
+
+/* Error label */
+.error-label {
+    font-size: 0.9rem;
+    color: red; /* red fits your theme */
+    height: 16px; /* keeps spacing consistent */
+    margin-top: -12px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Submit button */
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    background: green; /* main theme color */
+    color: #fff;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.signup-btn:hover {
+    background: #0f7a0f; /* darker green */
+}
+
+/* Login link text */
+.signup-form p {
+    text-align: center;
+    margin-top: 18px;
+    color: #ccc;
+}
+
+.signup-form a {
+    color: gold;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-form a:hover {
+    color: red; /* matches theme */
 }

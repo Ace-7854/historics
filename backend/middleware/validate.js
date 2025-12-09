@@ -1,23 +1,17 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { dirname } from "path";
+import { findUser } from "../config/db_handler.js";
+import { verifyPassword } from "../security/hash.js";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 function checkUsernamePassword(username, password) {
-
-    const users = JSON.parse(fs.readFileSync(path.join(__dirname, "..", "db", "users.json"), "utf8"));
-    const user = users.find(u => u.username === username);
+    const user = findUser(username);
 
     if (!user) {
         console.log("Username: ",username, " not found");
         return false;
-    }// PASSWORD NEEDS TO BE HASHED BEFORE COMPARISON
-    else if (user.password === password) {
+    }
+    else if (verifyPassword(user.password, password)) {
         console.log("User logged in:", username);
-        return true;
+        return user;
     }
     else {
         console.log("Incorrect Password");

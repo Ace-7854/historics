@@ -1,3 +1,3 @@
-async function MessageHandler(message) {
-
+export default async function MessageHandler(message) {
+    return message
 }
