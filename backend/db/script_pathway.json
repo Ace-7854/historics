@@ -73,7 +73,9 @@
             "Titus Andronicus",
             "Troilus and Cressida"
         ],
-        "question_opener":["how","what","do you","?","have"]
+        "question_opener":["how","what","do you","?","have"],
+        "life_topics": ["love","death","revenge","ambition"],
+        "theatre_topics": ["stage","actor","audience"]
 
     },
 
