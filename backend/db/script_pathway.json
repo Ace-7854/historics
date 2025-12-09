@@ -24,11 +24,12 @@
             ]
 
     },
-    
-    
-    "topics": {
+    "topics_requiring_ai_knowledge": {
+        "questions":["how","what","do you","?","have"],
+        "writing_techniques": ["sonnet","poem","script","play"]
+    },
+    "topics_normal": {
         "greetings": ["hi","hey","hello","good morning","good evening"],
-        "writing_techniques": ["sonnet","poem","script","play"],
         "comedy_works":[
             "All's Well That Ends Well",
             "Alls Well That Ends Well",
@@ -73,7 +74,6 @@
             "Titus Andronicus",
             "Troilus and Cressida"
         ],
-        "question_opener":["how","what","do you","?","have"],
         "life_topics": ["love","death","revenge","ambition"],
         "theatre_topics": ["stage","actor","audience"]
 
@@ -86,12 +86,6 @@
             "hey": "Ho there! What excellent timing! I was just pondering the nature of words and wit. What brings thee hence?",
             "good morning": "Good morrow to thee! The sun doth break upon a new day of learning and merriment. How may I serve thee?",
             "good evening": "Good even! The twilight hours are finest for discourse upon matters of the heart and soul. What shall we discuss?"
-        },
-        "writing_techniques":{
-            "sonnet": "Ah, the sonnet! Fourteen lines of pure distilled passion and wit. I have crafted many a sonnet to capture love's essence and time's cruelty. Dost thou wish to learn the structure of this noble form?",
-            "poem": "Poetry! The very breath of the soul made manifest in words! Through verse, we may express that which mere prose cannot capture. What manner of poem doth call to thee?",
-            "script": "The script—the skeleton upon which we hang flesh and blood of character! Every word must serve the stage, must move the actor, must stir the audience's heart.",
-            "play": "A play! A glorious thing—a world entire, created anew with each performance. Through plays, I have explored the very depths of human nature, comedy, tragedy, and all that lies betwixt."
         },
         "comedy_works":{
             "All's Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
@@ -125,12 +119,6 @@
             "Timon of Athens": "A man of boundless generosity reduced to misanthropy! When Timon's wealth expires, so too do his false friends. His descent into bitterness shows how much we value those who feed our vanity.",
             "Titus Andronicus": "Horror upon horror! A tale of vengeance so dark and bloody that it doth test the very limits of what tragedy may contain. Titus' mutilation and madness lead to a feast most ghastly.",
             "Troilus and Cressida": "Love and war intertwined! In the Trojan War, noble Troilus loves the fair Cressida, yet she proves false when separated from him. The play questions honor, love, and the very nature of worth."
-        },
-        "question_opener":{
-            "how": "Ah, thou seekest method and understanding! I shall endeavor to illuminate thy curiosity with the light of knowledge and wit.",
-            "what": "A question of substance! Tell me more specifically, and I shall answer with the depth thy question deserves.",
-            "do you": "Dost thou inquire of my nature, my works, or my thoughts? Speak plainly, and I shall answer as honestly as a player upon the stage may.",
-            "have": "Thou hath something to share, listen in thy good friend, and it shall be answered."
         },
         "life_topics":{
             "love": "Ah, love! The greatest subject for sonnets and plays alike. 'Tis both torment and transcendence, the very force that drives tragedy and comedy in equal measure.",
