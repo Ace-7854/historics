@@ -1,12 +1,12 @@
+import dotenv from "dotenv";
+dotenv.config();
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import accountLogin from "./middleware/loginHandler.js";
 import {addUsers} from "./config/db_handler.js";
 import { hashPassword } from "./security/hash.js";
 import { chatRequest } from "./controllers/chatController.js";
 
-dotenv.config();
 const app = express();
 
 app.use(cors());
@@ -14,13 +14,13 @@ app.use(express.json());
 
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
-  console.log("Health check received -> New client activated");
+  //console.log("Health check received -> New client activated");
 });
 
 app.post("/api/login", (req, res) => {
   const data = req.body;
 
-  console.log("Login attempt for user:", data);
+  //console.log("Login attempt for user:", data);
   
   const loginResult = accountLogin(data);
   res.json(loginResult);
@@ -29,10 +29,10 @@ app.post("/api/login", (req, res) => {
 
 app.post("/api/message", async (req, res) => {
   const data = req.body;
-  console.log("Message received:", data);
+  //console.log("Message received:", data);
   try {
   const chatResult = await chatRequest(data);
-    console.log("Chat response:", chatResult);
+    //console.log("Chat response:", chatResult.response);
   res.json({
     role: "bot",
     text: chatResult.response // frontend expects "text"
@@ -46,7 +46,7 @@ app.post("/api/message", async (req, res) => {
 
 app.post("/api/signup", async (req, res) => {
   const data = req.body;
-  console.log("Signup attempt for user:", data.username);
+  //console.log("Signup attempt for user:", data.username);
   try {
     data.password = await hashPassword(data.password);
     const signupResult = addUsers(data.username, data.password);

@@ -91,7 +91,7 @@ function getPersonaContext(scriptPathway) {
 }
 
 // Generate chat response based on user message and script pathway
-function generateChatResponse(userMessage) {
+async function generateChatResponse(userMessage) {
 
     try {
         const scriptPathway = loadScriptPathway();
@@ -106,12 +106,12 @@ function generateChatResponse(userMessage) {
         // First, check if message requires AI knowledge - this takes priority
         if (checkForAIRequiredTopics(userMessage, scriptPathway)) {
             /////AI GO HERE/////
-            // const ai_resp = googleApi(userMessage);
+            const ai_resp = await googleApi(userMessage);
             // AI model will be called here in the future
             return {
                 success: true,
-                // response: ai_resp,
-                response:"AI",// Placeholder - AI model response will go here
+                response: ai_resp,
+                // response:"AI",// Placeholder - AI model response will go here
                 source: "ai_model",
                 requiresAI: true
             };
@@ -173,13 +173,13 @@ function generateChatResponse(userMessage) {
 }
 
 // Main chat request handler
-function chatRequest(body) {
+async function chatRequest(body) {
 
     try {
         const { message } = body;
 
         // Generate response based on script pathway
-        const chatResponse = generateChatResponse(message);
+        const chatResponse = await generateChatResponse(message);
 
         if (!chatResponse.success) {
             return {
