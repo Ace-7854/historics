@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import { dirname } from "path";
+import { googleApi } from "../services/api.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -104,11 +105,13 @@ function generateChatResponse(userMessage) {
 
         // First, check if message requires AI knowledge - this takes priority
         if (checkForAIRequiredTopics(userMessage, scriptPathway)) {
-
+            /////AI GO HERE/////
+            // const ai_resp = googleApi(userMessage);
             // AI model will be called here in the future
             return {
                 success: true,
-                response: "AI RESPONSE", // Placeholder - AI model response will go here
+                // response: ai_resp,
+                response:"AI",// Placeholder - AI model response will go here
                 source: "ai_model",
                 requiresAI: true
             };
@@ -173,17 +176,7 @@ function generateChatResponse(userMessage) {
 function chatRequest(body) {
 
     try {
-        const { username, message } = body;
-
-        // Validate input
-        if (!username || !message) {
-
-            return {
-                success: false,
-                error: "Username and message are required"
-            };
-
-        }
+        const { message } = body;
 
         // Generate response based on script pathway
         const chatResponse = generateChatResponse(message);
@@ -198,9 +191,8 @@ function chatRequest(body) {
         // Return formatted response
         return {
             success: true,
-            username: username,
             userMessage: message,
-            botResponse: chatResponse.response,
+            response: chatResponse.response,
             source: chatResponse.source,
             matches: chatResponse.matches || null,
             matchCount: chatResponse.matchCount || 0,

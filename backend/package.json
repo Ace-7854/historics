@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@google/genai": "^1.32.0",
     "argon2": "^0.44.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",

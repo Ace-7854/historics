@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import accountLogin from "./middleware/loginHandler.js";
 import {addUsers} from "./config/db_handler.js";
 import { hashPassword } from "./security/hash.js";
+import { chatRequest } from "./controllers/chatController.js";
 
 dotenv.config();
 const app = express();
@@ -26,14 +27,21 @@ app.post("/api/login", (req, res) => {
 });
 
 
-app.post("/api/message", (req, res) => {
+app.post("/api/message", async (req, res) => {
   const data = req.body;
   console.log("Message received:", data);
-  // const message = MessageHandler(data.message);
+  try {
+  const chatResult = await chatRequest(data);
+    console.log("Chat response:", chatResult);
   res.json({
     role: "bot",
-    text: data.message // frontend expects "text"
-  });
+    text: chatResult.response // frontend expects "text"
+    });
+    }  catch (error) {
+    
+      console.error("Error processing message:", error);
+    res.status(500).json({ role: "bot", text: "An error occurred while processing your message." });
+  }
 });
 
 app.post("/api/signup", async (req, res) => {
