@@ -3,7 +3,7 @@ import "dotenv/config";   // Loads .env
 import {loadScriptPathway} from "../controllers/chatController.js";
 
 const ai = new GoogleGenAI({
-  apiKey: "AIzaSyCMLylAqO0NaD4QwedCfZigW8AZep0esfI",
+  apiKey: "",
 });
 
 function gettingSysPrompt() {
@@ -18,7 +18,7 @@ export async function googleApi(usrMsg) {
   const usrMsgWithSys = JSON.stringify(systemPrompt) + "\nUser: " + usrMsg;
   const response = await ai.models.generateContent({
     model: "gemini-2.5-flash",
-    contents: usrMsg,
+    contents: usrMsgWithSys,
   });
 
   console.log(response.text);
