@@ -3,20 +3,22 @@ import { loginUser } from '../api/base.js';
 
 export default function LoginPage() {
 
-    function handleLogin(e) {
-        e.preventDefault(); // <-- stop the form from reloading
+    async function handleLogin(e) {
+        e.preventDefault();
         
-        console.log("Login button clicked");
-    
         const username = document.getElementById("username").value;
         const password = document.getElementById("password").value;
-    
-        const credentials = { username, password };
-        console.log("Credentials to be sent:", credentials);
-    
-        loginUser(credentials).then((data) => {
-            console.log("Login result:", data);
-        });
+        
+        const data = await loginUser({ username, password });
+        
+        if (data.status === 'success') {
+            // Store username in localStorage
+            localStorage.setItem("username", username);
+            // Redirect to chat
+            window.location.href = "/";
+        } else {
+            alert("Login failed: " + data.message);
+        }
     }
 
     return (

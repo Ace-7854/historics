@@ -2,6 +2,62 @@
   {
     "username": "Ace",
     "password": "$argon2id$v=19$m=65536,t=3,p=4$vgWdOoIuHxbfdhNTQq1avw$X6+cxehnhtqi3qgRA0roENcFKls+JiNeaUE+i91NYC4",
-    "chats": []
+    "chats": [
+      {
+        "chatId": "chat_1765553528629_1lnc2bse3",
+        "chatName": "New Conversation",
+        "createdAt": "2025-12-12T15:32:08.629Z",
+        "messages": []
+      },
+      {
+        "chatId": "chat_1765553528631_0ntvaatll",
+        "chatName": "New Conversation",
+        "createdAt": "2025-12-12T15:32:08.631Z",
+        "messages": [
+          {
+            "messageId": "msg_1765553531811_79ilpozmt",
+            "sender": "user",
+            "timestamp": "2025-12-12T15:32:11.811Z",
+            "content": "Hello"
+          },
+          {
+            "messageId": "msg_1765553531856_gorleptup",
+            "sender": "shakespeare",
+            "timestamp": "2025-12-12T15:32:11.856Z",
+            "content": "All hail to thee! Welcome, welcome! Pray, what dost thou wish to know of mine works and days?"
+          },
+          {
+            "messageId": "msg_1765553544700_w3wxrabj3",
+            "sender": "user",
+            "timestamp": "2025-12-12T15:32:24.700Z",
+            "content": "How are you?"
+          },
+          {
+            "messageId": "msg_1765553547169_7hm3h3ayg",
+            "sender": "shakespeare",
+            "timestamp": "2025-12-12T15:32:27.170Z",
+            "content": "Hark, gentle scholar! How do I fare, dost thou inquire? Why, I am as sound as a Shilling, brisk as a May morning, and full of more conceits than a cuckoo's song! My quill doth itch to scratch out some new verse, and my mind doth teem with characters jostling for a place upon the stage. In sooth, I am thriving, thriving!\n\nBut enough of my humours! Tell me, how dost *thou* find thyself? Art thou ready to delve into the wondrous world of words and wit? For I am prepared to lead thee on a merry chase through the green fields of language, where we shall pluck the sweetest flowers of poetry and the sharpest thorns of satire. So speak, lad/lass! What burning questions doth thy heart hold this day?\n"
+          }
+        ]
+      },
+      {
+        "chatId": "chat_1765553537254_1yhwpdtur",
+        "chatName": "New Chat",
+        "createdAt": "2025-12-12T15:32:17.254Z",
+        "messages": []
+      },
+      {
+        "chatId": "chat_1765553753349_8k9lzl26r",
+        "chatName": "New Conversation",
+        "createdAt": "2025-12-12T15:35:53.349Z",
+        "messages": []
+      },
+      {
+        "chatId": "chat_1765553753351_ml1we7c8h",
+        "chatName": "New Conversation",
+        "createdAt": "2025-12-12T15:35:53.351Z",
+        "messages": []
+      }
+    ]
   }
 ]
