@@ -1,16 +1,20 @@
 import { useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import {signupUser} from "../api/base.js";
+import { useRef } from 'react';
 
 export default function SignUp() {
     const [signUp, setSignUp] = useState(false);
     const [error, setError] = useState(null);
     const navigate = useNavigate();
+    const usernameRef = useRef(null);
+    const passwordRef = useRef(null);
+    const confirmPassRef = useRef(null);
 
 
     function handleOnChange(event) {
         console.log("Input changed:", event.target.value);
-        if (document.getElementById("password").value !== document.getElementById("confirm-pass").value) {
+        if (passwordRef.current.value !== confirmPassRef.current.value) {
             setError("Passwords do not match");
             document.querySelector(".error-label").textContent = "Passwords do not match";
         } else {
@@ -21,9 +25,11 @@ export default function SignUp() {
 
     function handleSubmit(event) {
         if (!error) {
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
-        const credentials = JSON.stringify({ username, password });
+            const username = usernameRef.current.value;
+            const password = passwordRef.current.value;
+        // const username = document.getElementById("username").value;
+        // const password = document.getElementById("password").value;
+        const credentials = JSON.stringify({ username , password });
         console.log("Credentials to sign up:", credentials);
         
         const response = signupUser(credentials);
@@ -46,13 +52,13 @@ export default function SignUp() {
             <form>
                 <div className="form-group">
                     <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" className="signup-user" required />
+                    <input ref={usernameRef} type="text" id="username" className="signup-user" required />
 
                     <label htmlFor="password">Password</label>
-                    <input type="password" id="password" className="signup-pass" required/>
+                    <input ref={passwordRef} type="password" id="password" className="signup-pass" required/>
 
                     <label htmlFor="confirm-pass">Confirm Password:</label>
-                    <input type="password" id="confirm-pass" className="signup-pass" onChange={handleOnChange} required/>
+                    <input ref={confirmPassRef} type="password" id="confirm-pass" className="signup-pass" onChange={handleOnChange} required/>
                     <label className="error-label"></label>
                 </div>
                 <button type="submit" className="signup-btn" onClick={handleSubmit}>Sign Up</button>

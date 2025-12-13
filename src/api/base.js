@@ -75,3 +75,67 @@ export async function signupUser(credentials) {
   }
 
 }
+
+export async function createNewChat(username, chatName = "New Chat") {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/new`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, chatName })
+        });
+        return await response.json();
+    } catch (err) {
+        console.error("Error creating chat:", err);
+        return { success: false, error: "Failed to create chat" };
+    }
+}
+
+export async function getUserChats(username) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/${username}`);
+        return await response.json();
+    } catch (err) {
+        console.error("Error fetching chats:", err);
+        return { success: false, error: "Failed to fetch chats" };
+    }
+}
+
+export async function getChatMessages(username, chatId) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/${username}/${chatId}`);
+        return await response.json();
+    } catch (err) {
+        console.error("Error fetching messages:", err);
+        return { success: false, error: "Failed to fetch messages" };
+    }
+}
+
+export async function saveMessage(username, chatId, sender, content) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/message`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                username,
+                chatId,
+                message: { sender, content }
+            })
+        });
+        return await response.json();
+    } catch (err) {
+        console.error("Error saving message:", err);
+        return { success: false, error: "Failed to save message" };
+    }
+}
+
+export async function deleteChat(username, chatId) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/${username}/${chatId}`, {
+            method: "DELETE"
+        });
+        return await response.json();
+    } catch (err) {
+        console.error("Error deleting chat:", err);
+        return { success: false, error: "Failed to delete chat" };
+    }
+}

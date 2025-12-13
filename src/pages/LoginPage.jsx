@@ -1,10 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { loginUser } from '../api/base.js';
+import { useChat } from '../context/chatContext.jsx'; // NEW
 
 export default function LoginPage() {
+    const navigate = useNavigate();
+    const { login } = useChat(); // NEW
 
-    function handleLogin(e) {
-        e.preventDefault(); // <-- stop the form from reloading
+    async function handleLogin(e) {
+        e.preventDefault();
         
         console.log("Login button clicked");
     
@@ -14,16 +17,23 @@ export default function LoginPage() {
         const credentials = { username, password };
         console.log("Credentials to be sent:", credentials);
     
-        loginUser(credentials).then((data) => {
-            console.log("Login result:", data);
-        });
+        const data = await loginUser(credentials);
+        console.log("Login result:", data);
+        
+        if (data.status === 'success') {
+            login(username); // Use context login function
+            alert("Login successful!");
+            navigate("/"); // Redirect to chat page
+        } else {
+            alert("Login failed: " + (data.message || "Invalid credentials"));
+        }
     }
 
     return (
         <div className="login-page">
             <div className="login-card">
                 <h2>Login</h2>
-                <form>
+                <form onSubmit={handleLogin}>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
                         <input type="text" id="username" name="username" required />
@@ -32,7 +42,7 @@ export default function LoginPage() {
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" name="password" required />
                     </div>
-                    <button className="lgn-btn" onClick={handleLogin}>Login</button>
+                    <button type="submit" className="lgn-btn">Login</button>
                 </form>
                 <p>No account? <Link to="/signup" title="SignUp">SignUp</Link></p>
             </div>
