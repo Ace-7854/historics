@@ -70,7 +70,7 @@ export default function ChatPage() {
             setMessages(prev => [...prev, botMessage]);
             
             // Save bot message to backend
-            await saveMessage(username, currentChatId, "shakespeare", response.text);
+            await saveMessage(username, currentChatId, "bot", response.text);
         }
 
         setLoading(false);

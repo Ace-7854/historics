@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom';
 import { loginUser } from '../api/base.js';
+import { useRef } from 'react';
 
 export default function LoginPage() {
+
+    const usernameRef = useRef(null);
+    const passwordRef = useRef(null);
 
     async function handleLogin(e) {
         e.preventDefault();
         
-        const username = document.getElementById("username").value;
-        const password = document.getElementById("password").value;
+        const username = usernameRef.current.value;
+        const password = passwordRef.current.value;
+
+        // const username = document.getElementById("username").value;
+        // const password = document.getElementById("password").value;
         
         const data = await loginUser({ username, password });
         
@@ -28,11 +35,11 @@ export default function LoginPage() {
                 <form>
                     <div className="form-group">
                         <label htmlFor="username">Username:</label>
-                        <input type="text" id="username" name="username" required />
+                        <input ref={usernameRef} type="text" id="username" name="username" required />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password">Password:</label>
-                        <input type="password" id="password" name="password" required />
+                        <input ref={passwordRef} type="password" id="password" name="password" required />
                     </div>
                     <button className="lgn-btn" onClick={handleLogin}>Login</button>
                 </form>
