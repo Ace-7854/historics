@@ -25,7 +25,7 @@
 
     },
     "topics_requiring_ai_knowledge": {
-        "questions":["how","what","do you","?","have"],
+        "questions":["how","what","do you","?","have you","could","can","did","will","would","does","if","tell me"],
         "writing_techniques": ["sonnet","poem","script","play"]
     },
     "topics_normal": {
@@ -144,3 +144,4 @@
     }
 
 }
+
