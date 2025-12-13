@@ -790,3 +790,46 @@ body {
 .signup-form a:hover {
     color: red; /* matches theme */
 }
+
+/* Active chat highlighting */
+.chat-item.active {
+  background: linear-gradient(180deg, #8b4226 0%, #5a2f1f 100%);
+  border-color: rgba(220, 170, 60, 0.5);
+  box-shadow: 0 0 0 2px rgba(220, 170, 60, 0.2), 0 8px 22px rgba(10, 8, 6, 0.55);
+}
+
+/* Message count badge */
+.message-count {
+  font-size: 0.75rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+/* No chats message */
+.no-chats-message {
+  padding: 1rem;
+  text-align: center;
+  color: #a79144;
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* Login prompt in chat page */
+.login-prompt,
+.empty-chat-prompt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  color: #d8b54b;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.login-prompt p,
+.empty-chat-prompt p {
+  background-color: rgba(107, 23, 48, 0.3);
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(216, 181, 75, 0.2);
+}

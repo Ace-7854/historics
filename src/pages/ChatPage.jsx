@@ -1,83 +1,66 @@
-import { useState, useEffect } from "react";
 import TypeBox from "../assets/elements/TypeBox.jsx";
 import TextBox from "../assets/elements/TextBox.jsx";
-import { 
-    sendMessageToServer, 
-    createNewChat, 
-    getChatMessages, 
-    saveMessage 
-} from "../api/base.js";
+import { sendMessageToServer, saveMessage } from "../api/base.js";
+import { useChat } from "../context/chatContext.jsx";
 
 export default function ChatPage() {
-    const [messages, setMessages] = useState([]);
-    const [loading, setLoading] = useState(false);
-    const [currentChatId, setCurrentChatId] = useState(null);
-    const [username, setUsername] = useState(null); // Get from login state
-
-    // Initialize: Create chat if user is logged in
-    useEffect(() => {
-        // TODO: Get username from your auth state/context
-        const loggedInUser = localStorage.getItem("username"); // Example
-        
-        if (loggedInUser) {
-            setUsername(loggedInUser);
-            initializeChat(loggedInUser);
-        }
-    }, []);
-
-    async function initializeChat(user) {
-        // Create a new chat or load existing
-        const result = await createNewChat(user, "New Conversation");
-        
-        if (result.success) {
-            setCurrentChatId(result.chatId);
-        }
-    }
-
-    async function loadChatHistory(user, chatId) {
-        const result = await getChatMessages(user, chatId);
-        
-        if (result.success) {
-            // Convert from backend format to frontend format
-            const formattedMessages = result.chat.messages.map(msg => ({
-                role: msg.sender,
-                text: msg.content
-            }));
-            setMessages(formattedMessages);
-        }
-    }
+    const { 
+        username, 
+        currentChatId, 
+        messages, 
+        loading, 
+        addMessage, 
+        updateChatInList,
+        createChat 
+    } = useChat();
 
     async function handleMessageSend(text) {
-        if (!username || !currentChatId) {
+        // Check if user is logged in
+        if (!username) {
             alert("Please log in to send messages");
             return;
         }
 
+        // If no chat is selected, create one automatically
+        let chatId = currentChatId;
+        if (!chatId) {
+            chatId = await createChat("New Conversation");
+            if (!chatId) return; // Failed to create chat
+        }
+
         // Add user message to UI
         const userMessage = { role: "user", text };
-        setMessages(prev => [...prev, userMessage]);
+        addMessage(userMessage);
 
         // Save user message to backend
-        await saveMessage(username, currentChatId, "user", text);
-
-        setLoading(true);
+        await saveMessage(username, chatId, "user", text);
+        updateChatInList(chatId);
 
         // Get bot response
         const response = await sendMessageToServer(text);
 
         if (response && response.text) {
             const botMessage = { role: "bot", text: response.text };
-            setMessages(prev => [...prev, botMessage]);
+            addMessage(botMessage);
             
             // Save bot message to backend
-            await saveMessage(username, currentChatId, "bot", response.text);
+            await saveMessage(username, chatId, "shakespeare", response.text);
+            updateChatInList(chatId);
         }
-
-        setLoading(false);
     }
 
     return (
         <div className="chat-page">
+            {!username && (
+                <div className="login-prompt">
+                    <p>Please log in to start chatting</p>
+                </div>
+            )}
+            {username && !currentChatId && messages.length === 0 && (
+                <div className="empty-chat-prompt">
+                    <p>Select a chat or create a new one to start</p>
+                </div>
+            )}
             <TextBox messages={messages} loading={loading} />
             <TypeBox onSend={handleMessageSend} />
         </div>
