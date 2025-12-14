@@ -7,6 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const USERS_FILE = path.join(__dirname, "..", "db", "users.json");
 
+/**
+ * Loads all users from the database file.
+ * @returns {array} Array of user objects, empty array on error
+ */
 // Load users from file
 function loadUsers() {
     try {
@@ -18,6 +22,11 @@ function loadUsers() {
     }
 }
 
+/**
+ * Persists users array to the database file.
+ * @param {array} users - Array of user objects to save
+ * @returns {boolean} True on success, false on error
+ */
 // Save users to file
 function saveUsers(users) {
     try {
@@ -29,6 +38,12 @@ function saveUsers(users) {
     }
 }
 
+/**
+ * Creates a new chat for a user.
+ * @param {string} username - The username
+ * @param {string} [chatName="New Chat"] - Optional chat name
+ * @returns {object} Success status with chatId or error message
+ */
 // Create a new chat for a user
 export function createNewChat(username, chatName = "New Chat") {
     const users = loadUsers();
@@ -55,6 +70,13 @@ export function createNewChat(username, chatName = "New Chat") {
     return { success: false, error: "Failed to save chat" };
 }
 
+/**
+ * Adds a message to a specific chat.
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID
+ * @param {object} message - Message object with sender and content
+ * @returns {object} Success status with message or error message
+ */
 // Add a message to a specific chat
 export function addMessageToChat(username, chatId, message) {
     const users = loadUsers();
@@ -87,6 +109,11 @@ export function addMessageToChat(username, chatId, message) {
     return { success: false, error: "Failed to save message" };
 }
 
+/**
+ * Retrieves all chats for a user with metadata.
+ * @param {string} username - The username
+ * @returns {object} Success status with array of chats or error message
+ */
 // Get all chats for a user
 export function getUserChats(username) {
     const users = loadUsers();
@@ -108,6 +135,12 @@ export function getUserChats(username) {
     };
 }
 
+/**
+ * Retrieves all messages for a specific chat.
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID
+ * @returns {object} Success status with messages or error message
+ */
 // Get messages from a specific chat
 export function getChatMessages(username, chatId) {
     const users = loadUsers();
@@ -133,6 +166,13 @@ export function getChatMessages(username, chatId) {
     };
 }
 
+/**
+ * Updates the name of an existing chat.
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID
+ * @param {string} newName - The new chat name
+ * @returns {object} Success status or error message
+ */
 // Update chat name
 export function updateChatName(username, chatId, newName) {
     const users = loadUsers();
@@ -157,6 +197,12 @@ export function updateChatName(username, chatId, newName) {
     return { success: false, error: "Failed to update chat name" };
 }
 
+/**
+ * Deletes a chat and all its messages.
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID to delete
+ * @returns {object} Success status or error message
+ */
 // Delete a chat
 export function deleteChat(username, chatId) {
     const users = loadUsers();

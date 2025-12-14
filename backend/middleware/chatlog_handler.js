@@ -7,6 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 
+/**
+ * Loads all users from the database file.
+ * @returns {array|null} Array of user objects, null on error
+ */
 function loadUsers() {
     // Try catch to handle file read errors
     try {
@@ -19,6 +23,12 @@ function loadUsers() {
     }
 }
 
+/**
+ * Validates user data and returns error response if invalid.
+ * @param {array|null} users - Array of user objects
+ * @param {object} user - User object to validate
+ * @returns {object|null} Error response object or null if valid
+ */
 // Universal error checker for loading user data and finding specific user
 function checkUserDataErrors(users, user) {
     if (!users) {
@@ -36,6 +46,11 @@ function checkUserDataErrors(users, user) {
     return null; // No errors
 }
 
+/**
+ * Retrieves all chat logs for a specific user.
+ * @param {string} username - The username
+ * @returns {object} Success status with chats array or error message
+ */
 // This will just return all chat logs for a specific username
 function getUserChatLogs(username) {
     const users = loadUsers();

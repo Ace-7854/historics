@@ -1,5 +1,12 @@
 import checkUsernamePassword from "./validate.js";
 
+/**
+ * Authenticates a user by verifying username and password.
+ * @param {object} body - Request body containing username and password
+ * @param {string} body.username - The username
+ * @param {string} body.password - The password
+ * @returns {object} Login response with status, message, and user object
+ */
 export default function accountLogin (body) {
     const { username, password } = body;
     const user = checkUsernamePassword(username, password)
