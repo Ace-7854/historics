@@ -1,4 +1,9 @@
-//https://uiverse.io/BlackisPlay/sweet-frog-67
+/*
+This compenent is used to show a loading animation while data is being fetched or processed.
+This animation was sourced from uiverse.io (link below) and styled using styled-components.
+By no means do I claim to have created this animation.
+Source: https://uiverse.io/ahmedkhaled0/red-ghost-loader
+*/
 import styled from 'styled-components';
 
 const Loader = () => {

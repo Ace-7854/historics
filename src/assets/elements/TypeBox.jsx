@@ -1,7 +1,11 @@
+import { useRef } from "react";
+
 export default function TypeBox({ placeholder = "Type your message...", onSend }) {
+    const inputRef = useRef(null);
 
     function handleSend() {
-        const input = document.getElementById("inputArea");
+        // const input = document.getElementById("inputArea");
+        const input = inputRef.current;
         const message = input.value.trim();
 
         if (message.length === 0) return;
@@ -20,6 +24,7 @@ export default function TypeBox({ placeholder = "Type your message...", onSend }
     return (
         <div className="type-box">
             <input
+                ref={inputRef}
                 id="inputArea"
                 className="input-area"
                 type="text"
