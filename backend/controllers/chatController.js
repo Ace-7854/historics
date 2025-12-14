@@ -60,7 +60,12 @@ function getResponseFromPathway(scriptPathway, category, keyword) {
     return responses[keyword] || null;
 }
 
-// Determine all matching categories and keywords for user input
+/**
+ * Matches user input against script pathway topics.
+ * @param {string} userMessage - The user's message
+ * @param {object} scriptPathway - The script pathway object
+ * @returns {object} Object with matches array and matched boolean
+ */
 function matchUserInput(userMessage, scriptPathway) {
 
     const normalizedMessage = userMessage.toLowerCase().trim();
@@ -90,7 +95,12 @@ function getPersonaContext(scriptPathway) {
     return `Name: ${persona.name}\nContext: ${persona.context}\nTone: ${persona.tone}`;
 }
 
-// Generate chat response based on user message and script pathway
+/**
+ * Generates chat response by checking AI topics first, then script pathway.
+ * @async
+ * @param {string} userMessage - The user's input message
+ * @returns {Promise<object>} Response object with success status, message, and source
+ */
 async function generateChatResponse(userMessage) {
 
     try {
@@ -172,7 +182,13 @@ async function generateChatResponse(userMessage) {
     }
 }
 
-// Main chat request handler
+/**
+ * Main handler for chat requests. Processes user message and returns formatted response.
+ * @async
+ * @param {object} body - Request body containing message
+ * @param {string} body.message - The user's chat message
+ * @returns {Promise<object>} Formatted response with message, source, and metadata
+ */
 async function chatRequest(body) {
 
     try {

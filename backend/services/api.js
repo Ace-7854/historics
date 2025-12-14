@@ -11,11 +11,22 @@ const ai = new GoogleGenAI({
   apiKey: process.env.GOOGLE_API_KEY,
 });
 
+/**
+ * Loads the system prompt from the script pathway.
+ * @returns {object} Persona object containing name, context, and tone
+ */
 function gettingSysPrompt() {
   const scriptPathway = loadScriptPathway();
   return scriptPathway.persona;
 }
 
+/**
+ * Generates content using Google's Gemini API with persona context.
+ * @async
+ * @param {string} usrMsg - The user's message
+ * @param {string} [model="gemini-2.0-flash"] - The model to use
+ * @returns {Promise<string>} Generated response text
+ */
 export async function googleApi(usrMsg, model = "gemini-2.0-flash") {
   const systemPrompt = gettingSysPrompt();
 
