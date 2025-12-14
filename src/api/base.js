@@ -1,5 +1,10 @@
 const API_BASE_URL = "http://localhost:3001";
 
+/**
+ * Checks server health by pinging the health endpoint.
+ * @async
+ * @returns {Promise<object>} Health status object
+ */
 export async function fetchData() {
   try {
     const response = await fetch("http://localhost:3001/api/health");
@@ -18,6 +23,12 @@ export async function DataGet() {
 
 }
 
+/**
+ * Sends a user message to the backend chat API.
+ * @async
+ * @param {string} text - The message text to send
+ * @returns {Promise<object>} Server response with bot reply
+ */
 export async function sendMessageToServer(text) {
     try {
         const response = await fetch("http://localhost:3001/api/message", {
@@ -39,6 +50,12 @@ export async function sendMessageToServer(text) {
     }
 }
 
+/**
+ * Authenticates a user with provided credentials.
+ * @async
+ * @param {object} credentials - Login credentials (username and password)
+ * @returns {Promise<object>} Login response with status and user data
+ */
 export async function loginUser(credentials) {
   const response = await fetch(`http://localhost:3001/api/login`, 
     {
@@ -54,6 +71,12 @@ export async function loginUser(credentials) {
   return data;
 }
 
+/**
+ * Registers a new user account.
+ * @async
+ * @param {object} credentials - Signup credentials
+ * @returns {Promise<boolean>} True if signup successful, false otherwise
+ */
 export async function signupUser(credentials) {
   const response = await fetch("http://localhost:3001/api/signup", 
     {
@@ -76,6 +99,13 @@ export async function signupUser(credentials) {
 
 }
 
+/**
+ * Creates a new chat for a user.
+ * @async
+ * @param {string} username - The username
+ * @param {string} [chatName="New Chat"] - Optional chat name
+ * @returns {Promise<object>} Chat creation result with chatId
+ */
 export async function createNewChat(username, chatName = "New Chat") {
     try {
         const response = await fetch(`${API_BASE_URL}/api/chats/new`, {
@@ -90,6 +120,12 @@ export async function createNewChat(username, chatName = "New Chat") {
     }
 }
 
+/**
+ * Retrieves all chats for a user.
+ * @async
+ * @param {string} username - The username
+ * @returns {Promise<object>} Response with chats array
+ */
 export async function getUserChats(username) {
     try {
         const response = await fetch(`${API_BASE_URL}/api/chats/${username}`);
@@ -100,6 +136,13 @@ export async function getUserChats(username) {
     }
 }
 
+/**
+ * Retrieves all messages from a specific chat.
+ * @async
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID
+ * @returns {Promise<object>} Response with messages array
+ */
 export async function getChatMessages(username, chatId) {
     try {
         const response = await fetch(`${API_BASE_URL}/api/chats/${username}/${chatId}`);
@@ -110,6 +153,15 @@ export async function getChatMessages(username, chatId) {
     }
 }
 
+/**
+ * Saves a message to a chat.
+ * @async
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID
+ * @param {string} sender - The message sender (user or bot)
+ * @param {string} content - The message content
+ * @returns {Promise<object>} Save result response
+ */
 export async function saveMessage(username, chatId, sender, content) {
     try {
         const response = await fetch(`${API_BASE_URL}/api/chats/message`, {
@@ -128,6 +180,13 @@ export async function saveMessage(username, chatId, sender, content) {
     }
 }
 
+/**
+ * Deletes a chat and all its messages.
+ * @async
+ * @param {string} username - The username
+ * @param {string} chatId - The chat ID to delete
+ * @returns {Promise<object>} Deletion result response
+ */
 export async function deleteChat(username, chatId) {
     try {
         const response = await fetch(`${API_BASE_URL}/api/chats/${username}/${chatId}`, {
