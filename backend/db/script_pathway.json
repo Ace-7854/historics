@@ -25,8 +25,49 @@
 
     },
     "topics_requiring_ai_knowledge": {
-        "questions":["how","what","do you","?","have you","could","can","did","will","would","does","if","tell me"],
-        "writing_techniques": ["sonnet","poem","script","play"]
+        "questions": [
+            "how",
+            "what",
+            "do you",
+            "?",
+            "have you",
+            "could",
+            "can",
+            "did",
+            "will",
+            "would",
+            "does",
+            "if",
+            "tell me",
+            "why",
+            "wherefore",
+            "explain",
+            "teach me",
+            "describe",
+            "what mean you",
+            "pray tell",
+            "how comes it",
+            "in what manner",
+            "for what cause"
+        ],
+        "writing_techniques": [
+            "sonnet",
+            "poem",
+            "script",
+            "play",
+            "verse",
+            "iambic",
+            "iambic pentameter",
+            "rhyme",
+            "metaphor",
+            "imagery",
+            "monologue",
+            "soliloquy",
+            "act",
+            "scene",
+            "prologue",
+            "epilogue"
+        ]
     },
     "topics_normal": {
         "greetings": ["hi","hey","hello","good morning","good evening"],
@@ -74,7 +115,26 @@
             "Titus Andronicus",
             "Troilus and Cressida"
         ],
-        "life_topics": ["love","death","revenge","ambition"],
+        "biography_topics": [
+            "your life",
+            "thy life",
+            "childhood",
+            "family",
+            "marriage",
+            "Anne Hathaway",
+            "children",
+            "son",
+            "daughter",
+            "birth",
+            "love",
+            "death",
+            "home",
+            "ambition",
+            "life goal",
+            "Stratford",
+            "Stratford-upon-Avon",
+            "London life"
+        ],
         "theatre_topics": ["stage","actor","audience"]
 
     },
@@ -120,11 +180,25 @@
             "Titus Andronicus": "Horror upon horror! A tale of vengeance so dark and bloody that it doth test the very limits of what tragedy may contain. Titus' mutilation and madness lead to a feast most ghastly.",
             "Troilus and Cressida": "Love and war intertwined! In the Trojan War, noble Troilus loves the fair Cressida, yet she proves false when separated from him. The play questions honor, love, and the very nature of worth."
         },
-        "life_topics":{
-            "love": "Ah, love! The greatest subject for sonnets and plays alike. 'Tis both torment and transcendence, the very force that drives tragedy and comedy in equal measure.",
-            "death": "Death! The one certainty that makes all mortal concerns seem both urgent and futile. I have written much on this grim subject—mortality teaches us to value each moment.",
-            "revenge": "Vengeance! A bitter draught that poisons the drinker as much as the drunken enemy. Many of my plays explore this dark passion and its terrible consequences.",
-            "ambition": "Ambition doth drive men to greatness—and to ruin! 'Tis a double-edged sword that we must wield with utmost care."
+        "biography_topics": {
+            "your life": "Ah, thou wouldst hear of my own pilgrimage upon this mortal stage? I was born in Stratford-upon-Avon in the year of our Lord 1564, the eldest surviving son of John and Mary Shakespeare. From my youth in that pleasant market town, I did journey to London’s playhouses, where I spent many years as playwright, actor, and sharer with a company known first as the Lord Chamberlain’s Men and thereafter the King’s Men, writing tales of kings, lovers, and fools alike. Such hath been my course upon this earthly stage.",
+            "thy life": "Mine own life, good friend, hath been shaped by words and theatre. Born in Stratford, I was schooled in the classics and the tongues of old, and later did set my hand to the quill to compose dramas and verse that might stand upon the boards and in the hearts of all who hear them. Between the gentle Avon and bustling London did I weave both art and livelihood.",
+            "childhood": "In Stratford-upon-Avon did my childhood unfold. My father was a maker of gloves and a man of civic office, and my mother came from the Arden family of yeoman stock. Records tell us I was baptized on the 26th day of April in mine birth year, and there I grew amid siblings and scholastic study at the local grammar school, until youth’s vigor drove me toward the larger world.",
+            "family": "I was born to John and Mary Shakespeare, and as eldest surviving child I had many brothers and sisters, though some were lost in infancy as is often the way of mortal life. In due course I took to wife Mistress Anne Hathaway and begat children who were the joy and sorrow of my house.",
+            "marriage": "In the winter of 1582 did I wed Mistress Anne Hathaway of Shottery, for she was with child at eventide of our betrothal. Though she was older than I, we remained husband and wife all the days of my life, and our bond gave rise to three children.",
+            "Anne Hathaway": "Mistress Anne Hathaway, born in the village of Shottery near Stratford, was my wife from the year of our Lord 1582 until my death in 1616. She bore me Susanna and the twins, Judith and Hamnet, and she remained mistress of our home in Stratford whilst I pursued my calling in the great city of London.",
+            "children": "Anne and I had three children: our first, Susanna, born in springtide of 1583, and then the twins, Hamnet and Judith, borne in the year 1585. Of these, only Susanna and Judith lived to ripe age, for my poor son Hamnet died in the heat of summer at eleven years.",
+            "son": "My son Hamnet, twin to Judith, was taken from this life in the year of our Lord 1596 at the tender age of eleven. Such loss maketh the heart heavy beyond measure, and yet his memory abideth in the deep well of my soul.",
+            "daughter": "My daughters, Susanna and Judith, brought light to our hearth. Susanna arrived first in the year 1583 and later wed Master John Hall, a physician of good repute. Judith, her twin, likewise married and bore children of her own, though the line of the Shakespeares did not endure beyond a later generation.",
+            "birth": "Though no parchment record hath seen fit to preserve the exact moment of my birth, I was baptized upon the 26th day of April 1564 at Holy Trinity Church in Stratford-upon-Avon. From this rite we deduce I drew first breath upon or about the feast day of Saint George, England’s own patron.",
+            "love": "Love and I have known many faces — the love of craft that doth urge me to pen verse and scene, the love of family whose joys and sorrows shape the mortal heart, and the love of audience that giveth life to every line upon the stage. Truly, such love is both sweet and sharp to feel.",
+            "death": "I did draw my final breath on the 23rd day of April in the year of our Lord 1616, and was interred in the chancel of Holy Trinity Church in Stratford-upon-Avon. There my bones rest, and there the stone reads my name, marking the end of the play that was my life.",
+            "home": "My home was Stratford-upon-Avon, a fair market town where the Avon’s gentle waters wind through fields and lanes. Though London became my second stage, it was to Stratford that I did return, and there my house at New Place became a refuge until the close of my days.",
+            "ambition": "Ambition drove my hand not for wealth nor idle fame, but to craft words that might stir the mind and move the heart. Though a youth from modest stock, I sought a voice to explore the breadth of human passion, and the theatre — that grand mirror of mankind — became my chosen arena.",
+            "life goal": "If there be a goal to one’s life, it is to leave behind echoes of truth upon the stage and page, that each reader and spectator may see their own light and shadow reflected therein. So did I strive, with quill and verse, to ensnare the fleeting wonder of the human soul.",
+            "Stratford": "Stratford-upon-Avon, where I first saw the dawn of life, is a town of timbered houses and market trade, the heart of a gentle shire. There I learned my letters and there my family abode, and in that same place I was laid to rest.",
+            "Stratford-upon-Avon": "Stratford-upon-Avon, fair jewel on the Avon’s winding course, was both cradle and grave unto me. Here did my kin dwell and here did I return in later years to dwell in peace after many seasons in London’s bustle.",
+            "London life": "London, that vast and throbbing town, was the stage upon which my plays found their voices and my name was uttered among players and patrons alike. There in the playhouses’ boards did I ply my craft, and there did I earn renown sufficient to feed my family and secure my return to Stratford."
         },
         "theatre_topics":{
             "stage": "The stage! My greatest love and truest home. 'Tis a place where fiction becomes truth and dreams take flesh before the eyes of all.",
