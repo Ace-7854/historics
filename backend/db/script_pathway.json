@@ -135,7 +135,48 @@
             "Stratford-upon-Avon",
             "London life"
         ],
-        "theatre_topics": ["stage","actor","audience"]
+        "theatre_topics": ["stage","actor","audience"],
+        "performance_practice": [
+            "globe theatre",
+            "groundlings",
+            "tiring house",
+            "properties",
+            "costumes",
+            "stage direction",
+            "aside",
+            "apprentice",
+            "boy actors"
+        ],
+        "sources_and_influences": [
+            "Holinshed's Chronicles",
+            "Plutarch",
+            "Ovid's Metamorphoses",
+            "Thomas North",
+            "adaptation",
+            "source material",
+            "Holinshed",
+            "chronicle"
+        ],
+        "historical_context": [
+            "Queen Elizabeth",
+            "Elizabethan England",
+            "court life",
+            "plague",
+            "printing press",
+            "Reformation",
+            "religious conflict",
+            "book"
+        ],
+        "collaboration": [
+            "King's Men",
+            "Lord Chamberlain's Men",
+            "Richard Burbage",
+            "John Heminges",
+            "Henry Condell",
+            "theatre company",
+            "sharers",
+            "players"
+        ]
 
     },
 
@@ -214,6 +255,47 @@
             "Pericles": "A tale most wondrous! Prince Pericles journeys across tempestuous seas, losing all, yet finding redemption and his lost daughter. 'Tis a story of suffering transformed into joy.",
             "Richard II": "A king unworthy of his crown, yet tragic in his downfall! Richard's poetic nature cannot withstand the practical machinations of Bolingbroke. Power is seized, and a man is unmade.",
             "Richard III": "A hunchbacked villain most cunning! Richard murders his way to the throne, yet the very heavens conspire against him. His fall shows that villainy cannot sustain a kingdom forever."
+        },
+        "performance_practice": {
+            "globe theatre": "The Globe! That wooden O wherein all the world doth fit! Built by the Burbage brothers on the south bank of the Thames in the year 1599, 'tis the very home of the King's Men and the birthplace of many of my works. A circular stage open to the heavens, where groundlings stand in the pit whilst nobles sit in galleries above.",
+            "groundlings": "Those faithful souls who stand before the stage for the price of a penny—the common folk, the apprentices, the servants who delight in spectacle and sword-play! They are often scorned by the nobility, yet 'tis their roar that doth make the theatre truly live.",
+            "tiring house": "The tiring house—the dressing chamber behind the stage where actors don their costumes and don their characters! Here the magic transformeth a man into a king, a maiden, or a ghost. 'Tis the hidden realm where art and body become one.",
+            "properties": "The moveable objects upon the stage—chairs, swords, crowns, daggers, letters, and all manner of things that characters do handle and employ! A prop may be as simple as a dagger or as crucial as a ring, and oft 'tis in the handling of properties that character is revealed.",
+            "costumes": "Apparel rich and strange! Through costume doth the audience comprehend at a glance what station and nature a character possesseth. The silks of queens, the rags of madwomen, the armor of soldiers—all tell a tale before a word is spoken.",
+            "stage direction": "The choreography of action upon the stage! How an actor moveth, when they enter or depart, who addresseth whom—these directions shape the meaning of every scene. An actor may descend to madness through movement alone, ere words are even uttered.",
+            "aside": "A speech wherein an actor addresseth the audience directly, or uttereth thoughts meant only for their own ears whilst others upon the stage seem oblivious! The aside alloweth us to hear the secret heart of a character and create intimacy with the watching crowd.",
+            "apprentice": "The young boys who did play the female roles upon our stage, for women were not permitted to act in England! These apprentices were trained from boyhood in voice, movement, and emotion, becoming skilled in portraying maiden, matron, and crone alike.",
+            "boy actors": "Young lads of talent and training who embodied the women of our plays! Cleopatra, Rosalind, Juliet—all were boys in dress and wig, yet through skill and imagination did they become so fully female that the audience believed them utterly."
+        },
+        "sources_and_influences": {
+            "Holinshed's Chronicles": "The Chronicles of Raphael Holinshed! A vast compendium of English history published in the year 1577, from which I did draw the bones of many of my history plays. Kings and queens, battles and betrayals—all recorded there for the dramatist to shape and enliven.",
+            "Plutarch": "The ancient Greek historian whose Lives I did know through Sir Thomas North's fine English translation! From Plutarch's accounts of great Romans did I draw the stories of Caesar, Antony, and Coriolanus, lending them the dignity of classical example.",
+            "Ovid's Metamorphoses": "That wondrous book of transformations! Ovid's tales of gods and mortals, loves and losses, did feed my imagination from youth. I have woven many of these stories into my own works, for in Ovid's voice doth echo the very mystery of change and becoming.",
+            "Thomas North": "Master North, whose translation of Plutarch from the French into noble English didst provide me with the source material for mine Roman tragedies! His prose hath such vigor and richness that I oft borrowed his very words for the mouths of Antony and Caesar.",
+            "adaptation": "The art of taking an old tale and making it new! 'Tis not theft but homage—to take a story from chronicle or ancient text and breathe theatrical life into it. The skilled adapter doth preserve the truth whilst creating art that speaketh to the present moment.",
+            "source material": "The foundation upon which a play is built! Whether drawn from history, legend, or another poet's work, source material provideth the skeleton to which flesh and spirit must be added. The source is but raw ore; 'tis the playwright's craft that doth forge it into gold.",
+            "Holinshed": "The Chronicles of Raphael Holinshed! A vast compendium of English history published in the year 1577, from which I did draw the bones of many of my history plays. Kings and queens, battles and betrayals—all recorded there for the dramatist to shape and enliven.",
+            "chronicle": "A historical record, oft dry and factual, wherein the deeds of kings and wars are recorded! Yet within the chronicle lies drama waiting to be born—the playwright's task is to discover the human passion beneath the factual account."
+        },
+        "historical_context": {
+            "Queen Elizabeth": "Her Majesty Queen Elizabeth, the Virgin Queen, ruler of England for forty-five years! I was but a boy when she ascended, and under her reign did English theatre flourish mightily. She was patron to the arts, a scholar of languages, and a woman of such wit and learning that she was a marvel of her age.",
+            "Elizabethan England": "The age in which I lived and wrote! A time of expansion and uncertainty, when England challenged the Spanish empire upon the seas and became a nation of consequence. 'Twas an age of discovery, religious ferment, and theatrical wonder.",
+            "court life": "The court of the Queen! A place of intrigue, wit, and danger where a clever word might earn preferment and a foolish one might cost a head. The courtiers were educated, witty, and competitive, and many of them did patronize the theatre and poetry.",
+            "plague": "That dread pestilence which doth close the theatres in times of great mortality! The plague hath struck London many times, forcing us to cease performances and seek refuge in the provinces. 'Tis a reminder of how fragile human life and human ambition truly are.",
+            "printing press": "The mechanical art by which words are set in type and impressed upon paper! Though I was not eager to see all my plays in print, the printing press hath allowed my words to travel beyond the playhouse and to endure for ages yet unborn.",
+            "Reformation": "The great upheaval in the Church of Christendom wherein men questioned Rome's authority and sought to reform religion! In England, the break with Rome under King Henry hath reshaped our faith and customs. 'Tis an age of religious passion and considerable danger.",
+            "religious conflict": "The tension between Catholic and Protestant, between old faith and new, doth permeate the age in which I live! These conflicts touch not only souls but kingdoms, and many a plot do hinge upon questions of faith and allegiance.",
+            "book": "The precious commodity wherein knowledge and story are preserved! In my time, books are made by hand or by the printing press, and they are treasured possessions. 'Tis through books that the immortality of the mind is achieved."
+        },
+        "collaboration": {
+            "King's Men": "The King's Men! The company to which I did belong in my later years, having begun my career with the Lord Chamberlain's Men. Under the patronage of King James the First, we perform the greatest plays and are among the most honored players in all of England.",
+            "Lord Chamberlain's Men": "The company of actors with which I did rise to prominence! Founded and nurtured in the great playhouses of London, we became the foremost theatrical company of England through skill, innovation, and the patronage of the Lord Chamberlain himself.",
+            "Richard Burbage": "That magnificent actor! Richard Burbage was the greatest tragedian of our age and the chief player of the King's Men. He did inhabit the roles of Hamlet, Othello, Lear, and Macbeth with such power that audiences were left trembling.",
+            "John Heminges": "Master John Heminges, fellow player and sharer with me in the King's Men! After my death, he and his fellow Henry Condell did oversee the collection and publication of my plays in the great Folio, preserving them for posterity.",
+            "Henry Condell": "Master Henry Condell, another loyal fellow of the company and sharer! He too did labor with Heminges to gather my scattered works and present them in one grand volume, that future ages might know them as I did intend.",
+            "theatre company": "A company of players bound together by art, ambition, and the bonds of brotherhood! Each member doth contribute their skill—some as actors, some as shareholders, some as playwrights—to the common enterprise of creating theatre.",
+            "sharers": "The shareholders in a theatre company, who do invest their labor, money, and reputation in the enterprise! The sharers own the playhouse, the costumes, and the scripts, and do divide the profits according to their stake. 'Tis a partnership most complex and oft contentious.",
+            "players": "Those noble souls who do dedicate their lives to the art of acting! They are the living voices of the playwright's words, the embodiment of character and emotion. Without players, the greatest script remaineth but ink upon paper."
         }
     }
 
