@@ -74,7 +74,6 @@
         "comedy_works":[
             "All's Well That Ends Well",
             "Alls Well That Ends Well",
-            "All Well That Ends Well",
             "As You Like It",
             "Comedy of Errors",
             "Love's Labour's Lost",
@@ -191,7 +190,6 @@
         "comedy_works":{
             "All's Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
             "Alls Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
-            "All Well That Ends Well": "A tale of determination and love's triumph! Fair Helena pursues the proud Bertram with such unwavering devotion that even his reluctance cannot withstand her constancy. All that endeth well is indeed well done!",
             "As You Like It": "The forest of Arden! A place where lovers find their true nature, and the melancholy Jacques doth speak truths most profound. Here, all the world's a stage, and each must play his part.",
             "Comedy of Errors": "Confusion most delightful! Twin brothers separated at birth create such mayhem and merriment as each is mistaken for the other. 'Tis a farce that would make the groundlings roar with laughter!",
             "Love's Labour's Lost": "Four young men forsake love for learning—yet love hath the final word! Wit and wordplay clash with hearts most true, and in the end, folly of the scholarly kind doth yield to love's wisdom.",
@@ -300,4 +298,5 @@
     }
 
 }
+
 
