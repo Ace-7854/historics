@@ -91,30 +91,18 @@ export function ChatProvider({ children }) {
         loadUserChats(user);
     }
 
-    // Logout function
+ // Logout function
     function logout() {
+        console.log("Logging out user:", username);
         setUsername(null);
         setChats([]);
         setCurrentChatId(null);
         setMessages([]);
         localStorage.removeItem("username");
+        return true;
     }
 
-    const value = {
-        username,
-        chats,
-        currentChatId,
-        messages,
-        loading,
-        loadChat,
-        createChat,
-        addMessage,
-        updateChatInList,
-        renameChat, // ADD THIS
-        login,
-        logout,
-        setMessages
-    };
+
     async function renameChat(chatId, newName) {
         if (!username || !newName.trim()) {
             return false;
@@ -134,6 +122,23 @@ export function ChatProvider({ children }) {
         return false;
     }
 
+        // CRITICAL: This value object must include ALL functions you want to use
+    const value = {
+        username,
+        chats,
+        currentChatId,
+        messages,
+        loading,
+        loadChat,
+        createChat,
+        addMessage,
+        updateChatInList,
+        login,
+        logout,
+        renameChat,
+        setMessages
+    };
+
 
     return (
         <ChatContext.Provider value={value}>
@@ -141,6 +146,7 @@ export function ChatProvider({ children }) {
         </ChatContext.Provider>
     );
 }
+
 export function useChat() {
     const context = useContext(ChatContext);
     if (!context) {

@@ -1,4 +1,4 @@
-import { Plus, Search, MoreVertical, Edit2 } from "lucide-react"; // ADD Edit2
+import { Plus, Search, MoreVertical, Edit2, LogOut} from "lucide-react"; // ADD Edit2
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { useChat } from "../../context/chatContext.jsx";
@@ -12,7 +12,7 @@ export default function Navbar() {
   const [renameModalOpen, setRenameModalOpen] = useState(false); // ADD THIS
   const [chatToRename, setChatToRename] = useState(null); // ADD THIS
   
-  const { chats, currentChatId, loadChat, createChat, username, renameChat } = useChat();
+  const { chats, currentChatId, loadChat, createChat, username, renameChat, logout } = useChat();
 
   async function handleNewChat() {
     if (!username) {
@@ -21,6 +21,13 @@ export default function Navbar() {
     }
     
     await createChat("New Chat");
+  }
+
+   function handleLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+      logout();
+      navigate("/login");
+    }
   }
 
   function handleSearchChats() {
@@ -186,16 +193,34 @@ export default function Navbar() {
                 {!collapsed ? "Chat" : "💬"}
               </Link>
             </li>
-            <li>
+            {!username && (<li>
               <Link to="/login" title="Login">
                 {!collapsed ? "Login" : "🔒"}
               </Link>
-            </li>
+            </li>)}
+            {/* ADD THIS - Show logout only when user is logged in */}
+            {username && (
+              <li>
+                <button 
+                  onClick={handleLogout} 
+                  className="logout-btn"
+                  title="Logout"
+                >
+                  {!collapsed ? (
+                    <>
+                      <LogOut size={16} />
+                      <span>Logout</span>
+                    </>
+                  ) : (
+                    <LogOut size={16} />
+                  )}
+                </button>
+              </li>
+            )}
           </ul>
         </footer>
       </aside>
 
-      {/* ADD RENAME MODAL */}
       <RenameModal
         isOpen={renameModalOpen}
         currentName={chatToRename?.chatName || ""}

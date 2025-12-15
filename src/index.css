@@ -1112,3 +1112,53 @@ body {
     padding-right: 1rem;
   }
 }
+
+/* Logout button in footer */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #966818;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  color: #cbbc57;
+}
+
+.navbar-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-footer li {
+  margin-bottom: 6px;
+}
+
+.navbar-footer a,
+.navbar-footer button {
+  color: #966818;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  text-align: left;
+}
+
+.navbar-footer a:hover,
+.navbar-footer button:hover {
+  color: #cbbc57;
+}
