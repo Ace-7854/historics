@@ -193,6 +193,11 @@ export default function Navbar() {
                 {!collapsed ? "Chat" : "💬"}
               </Link>
             </li>
+            <li>
+              <Link to="/about" title="About">
+                {!collapsed ? "About" : "ℹ️"}
+              </Link>
+            </li>
             {!username && (<li>
               <Link to="/login" title="Login">
                 {!collapsed ? "Login" : "🔒"}
