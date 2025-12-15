@@ -39,7 +39,7 @@ function App() {
   }
   
   if (serverOk === false) {
-    return <ErrorPage error="Cannot connect to the server. Please try again later." />;
+    return <ErrorPage error="The server is currently powered off, please open a new terminal and run the server in order to use application." />;
   }
 
   return (

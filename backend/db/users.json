@@ -7,7 +7,20 @@
         "chatId": "chat_1765667945549_4jl17yh4b",
         "chatName": "New Conversation",
         "createdAt": "2025-12-13T23:19:05.549Z",
-        "messages": []
+        "messages": [
+          {
+            "messageId": "msg_1765814954380_5hkke0jq5",
+            "sender": "user",
+            "timestamp": "2025-12-15T16:09:14.380Z",
+            "content": "How did you make hamlet"
+          },
+          {
+            "messageId": "msg_1765814958237_9kscvpdz1",
+            "sender": "shakespeare",
+            "timestamp": "2025-12-15T16:09:18.237Z",
+            "content": "Ah, my keen apprentice, so thou dost enquire about the making of young Hamlet, eh? A most weighty matter, truly!\n\nWell, 'tis not as simple as brewing a pint of ale, I assure thee! The seed of the tale, like a fertile grain, was sown long ago in the soil of Scandinavian legends. One Saxo Grammaticus, a Danish scribe, did pen a chronicle of Amleth, a prince feigning madness to avenge his father's death. A tale ripe with treachery and revenge, dost thou see?\n\nBut raw legend is like unworked ore: it must be mined, smelted, and hammered into shape. I took this tale, infused it with the very humours of human nature—melancholy, ambition, love, and, of course, a healthy dose of the old \"what's what.\"\n\nThen, I stirred in a cauldron of questions. What does it mean to be? Is revenge a dish best served cold, or does it poison the server too? Can a man truly know himself, or are we all but shadows dancing in the play of fate?\n\nAnd, of course, a pinch of my own devising! Ghostly visitations, a play within a play to catch the conscience of a king, and a graveyard scene that would make even a gravedigger weep—'tis all a playwright's trick, to capture the heart and tickle the brain.\n\nSo, there thou hast it. A pinch of legend, a heap of human folly, a dash of ghostly spice, and a good measure of contemplation—all simmered in the fire of inspiration. And lo, Hamlet doth rise! Dost find that answer satisfactory, young scholar?\n"
+          }
+        ]
       },
       {
         "chatId": "chat_1765668264061_0ln4z8kb1",
@@ -79,7 +92,7 @@
       },
       {
         "chatId": "chat_1765809901206_clqhisgsc",
-        "chatName": "New Conversation",
+        "chatName": "conc",
         "createdAt": "2025-12-15T14:45:01.206Z",
         "messages": [
           {
