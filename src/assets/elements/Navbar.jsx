@@ -1,16 +1,16 @@
 import { Plus, Search, MoreVertical, Edit2 } from "lucide-react"; // ADD Edit2
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useChat } from "../../context/ChatContext.jsx";
-import RenameModal from "./RenameModal.jsx"; // ADD THIS
+import { useChat } from "../../context/chatContext.jsx"; 
+import RenameModal from "./RenameModal.jsx";
 
 export default function Navbar() {
   const [collapsed, setCollapsed] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [showMenu, setShowMenu] = useState(null); // Track which chat's menu is open
-  const [renameModalOpen, setRenameModalOpen] = useState(false); // ADD THIS
-  const [chatToRename, setChatToRename] = useState(null); // ADD THIS
+  const [renameModalOpen, setRenameModalOpen] = useState(false);
+  const [chatToRename, setChatToRename] = useState(null);
   
   const { chats, currentChatId, loadChat, createChat, username, renameChat } = useChat();
 
@@ -59,54 +59,63 @@ export default function Navbar() {
   }
 
   // Render a single chat item
-  function renderChatItem(chat, index) {
-    const isActive = chat.chatId === currentChatId;
-    const menuOpen = showMenu === chat.chatId;
+  // Render a single chat item
+function renderChatItem(chat, index) {
+  const isActive = chat.chatId === currentChatId;
+  const menuOpen = showMenu === chat.chatId;
 
-    return (
-      <div key={chat.chatId} className="chat-item-wrapper">
-        <button
-          className={`chat-item ${isActive ? 'active' : ''}`}
-          onClick={() => handleChatClick(chat.chatId)}
-          title={chat.chatName}
-        >
-          {collapsed ? (
-            <span className="chat-initial">{chat.chatName.charAt(0)}</span>
-          ) : (
-            <>
-              <span className="chat-name">
-                {chat.chatName}
-                {chat.messageCount > 0 && (
-                  <span className="message-count"> ({chat.messageCount})</span>
-                )}
-              </span>
-              <button
-                className="chat-menu-btn"
-                onClick={(e) => toggleMenu(chat.chatId, e)}
-                title="Options"
-              >
-                <MoreVertical size={16} />
-              </button>
-            </>
-          )}
-        </button>
-
-        {menuOpen && !collapsed && (
-          <div className="chat-menu">
+  return (
+    <div key={chat.chatId} className="chat-item-wrapper">
+      {/* CHANGED: Use div instead of button for the wrapper */}
+      <div
+        className={`chat-item ${isActive ? 'active' : ''}`}
+        onClick={() => handleChatClick(chat.chatId)}
+        title={chat.chatName}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            handleChatClick(chat.chatId);
+          }
+        }}
+      >
+        {collapsed ? (
+          <span className="chat-initial">{chat.chatName.charAt(0)}</span>
+        ) : (
+          <>
+            <span className="chat-name">
+              {chat.chatName}
+              {chat.messageCount > 0 && (
+                <span className="message-count"> ({chat.messageCount})</span>
+              )}
+            </span>
+            {/* Now this button is NOT inside another button */}
             <button
-              className="chat-menu-item"
-              onClick={(e) => handleRenameClick(chat, e)}
+              className="chat-menu-btn"
+              onClick={(e) => toggleMenu(chat.chatId, e)}
+              title="Options"
             >
-              <Edit2 size={14} />
-              <span>Rename</span>
+              <MoreVertical size={16} />
             </button>
-            {/* Add more menu items here later (delete, share, etc.) */}
-          </div>
+          </>
         )}
       </div>
-    );
-  }
 
+      {menuOpen && !collapsed && (
+        <div className="chat-menu">
+          <button
+            className="chat-menu-item"
+            onClick={(e) => handleRenameClick(chat, e)}
+          >
+            <Edit2 size={14} />
+            <span>Rename</span>
+          </button>
+          {/* Add more menu items here later (delete, share, etc.) */}
+        </div>
+      )}
+    </div>
+  );
+}
   return (
     <>
       <aside className={`navbar ${collapsed ? "collapsed" : ""}`}>
