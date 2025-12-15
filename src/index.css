@@ -1162,3 +1162,27 @@ body {
 .navbar-footer button:hover {
   color: #cbbc57;
 }
+
+/* Main container for the About page */
+.about-page {
+    margin-left: 240px;            /* width of the navbar */
+    padding: 2.5rem 3rem;
+    max-width: 900px;
+    right: 0; 
+    content: left;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #1f2933;
+}
+
+/* Page title */
+.about-page h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+/* Section headings */
+.about-page h2 {
+    font-size: 1.4rem;
+}

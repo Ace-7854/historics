@@ -15,6 +15,7 @@ import LoginPage from './pages/LoginPage.jsx';
 import ErrorPage from './pages/error.jsx';
 import NotFound from './pages/404.jsx';
 import SignUp from './pages/SignUp.jsx';
+import About from './pages/About.jsx';
 
 function App() {
   const [serverOk, setServerOk] = useState(null);
@@ -50,6 +51,7 @@ function App() {
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/error" element={<ErrorPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
