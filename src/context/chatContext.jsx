@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect } from 'react';
-import { getUserChats, getChatMessages, createNewChat } from '../api/base.js';
+import { getUserChats, getChatMessages, createNewChat, updateChatName } from '../api/base.js';
 
 const ChatContext = createContext();
 
@@ -110,10 +110,30 @@ export function ChatProvider({ children }) {
         createChat,
         addMessage,
         updateChatInList,
+        renameChat, // ADD THIS
         login,
         logout,
         setMessages
     };
+    async function renameChat(chatId, newName) {
+        if (!username || !newName.trim()) {
+            return false;
+        }
+
+        const result = await updateChatName(username, chatId, newName.trim());
+        
+        if (result.success) {
+            // Update local state
+            setChats(prev => prev.map(chat => 
+                chat.chatId === chatId 
+                    ? { ...chat, chatName: newName.trim() }
+                    : chat
+            ));
+            return true;
+        }
+        return false;
+    }
+
 
     return (
         <ChatContext.Provider value={value}>
@@ -121,8 +141,6 @@ export function ChatProvider({ children }) {
         </ChatContext.Provider>
     );
 }
-
-// Custom hook to use the chat context
 export function useChat() {
     const context = useContext(ChatContext);
     if (!context) {

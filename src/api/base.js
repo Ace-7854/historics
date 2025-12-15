@@ -198,3 +198,18 @@ export async function deleteChat(username, chatId) {
         return { success: false, error: "Failed to delete chat" };
     }
 }
+
+// Update/rename chat
+export async function updateChatName(username, chatId, newName) {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/chats/rename`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, chatId, newName })
+        });
+        return await response.json();
+    } catch (err) {
+        console.error("Error renaming chat:", err);
+        return { success: false, error: "Failed to rename chat" };
+    }
+}

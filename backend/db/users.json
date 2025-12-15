@@ -17,7 +17,7 @@
       },
       {
         "chatId": "chat_1765668264122_ocipvo5o3",
-        "chatName": "New Conversation",
+        "chatName": "Hamlet",
         "createdAt": "2025-12-13T23:24:24.122Z",
         "messages": [
           {
@@ -43,12 +43,24 @@
             "sender": "shakespeare",
             "timestamp": "2025-12-13T23:28:11.987Z",
             "content": "Hark, gentle scholar! How do I fare, dost thou inquire? Why, I am as full of beans as a midsummer's night, though perhaps a tad weary from wrangling words and wooing the muse. The quill hath been busy, scratching out verses like a lovesick cat serenading the moon. But tell me, sweet youth, how fares *thee*? Art thou ready to delve into the delightful depths of this playwright's paltry past? Fear not, for even the most tedious tale can be seasoned with a sprinkle of wit, a dash of wordplay, and a hearty helping of good cheer! So, come, let us to it, ere the sun doth set and the nightingales lull us to slumber. What burning question doth bubble in thy brain, eh?\n"
+          },
+          {
+            "messageId": "msg_1765802349202_k7e21spvj",
+            "sender": "user",
+            "timestamp": "2025-12-15T12:39:09.202Z",
+            "content": "How did you write hamlet?"
+          },
+          {
+            "messageId": "msg_1765802353802_jk6c8cmdz",
+            "sender": "shakespeare",
+            "timestamp": "2025-12-15T12:39:13.802Z",
+            "content": "Hark, a query most weighty indeed! How did I pen the tragedy of Hamlet, Prince of Denmark? Marry, 'tis a tale almost as long as the play itself!\n\nFirst, imagine, if thou wilt, a mind teeming with shadows, doubts, and the very stuff of human woe. I did steep myself in tales of revenge, of melancholic princes and ghostly visitations, much like a cook prepares a broth, simmering and stirring until the flavor doth bloom.\n\nI did feast upon the old legends – Saxo Grammaticus's *Historia Danica*, and the tale of Amleth. I did take the kernel of the story, see, and plant it deep in the fertile soil of mine imagination. Then, with quill in hand and ink a-flowing, I did wrestle with the characters. Hamlet, ah, a fellow full of questions, as uncertain as a weathercock in a storm. I did pour my own ponderings upon mortality, the nature of revenge, and the fickle nature of fortune into his very soul.\n\nThen, did I craft his speeches with great care. Each word weighed, each phrase turned, to capture the very essence of his inner turmoil. Dost thou remember \"To be, or not to be\"? That line, lad, was birthed from many a sleepless night, wrestling with the angel of despair!\n\nThe other characters did grow like branches from the central tree of Hamlet's story. Claudius, the serpent in the garden, a villain as smooth as he is treacherous. Ophelia, a fragile flower crushed beneath the weight of circumstance. And so on, each playing their part in the unfolding tragedy.\n\nI did revise and rewrite, again and again, until the words did sing true and the story did grip the heart. It was a labor of love, a striving for perfection, and a touch of madness, perhaps, for art doth often demand a pound of flesh from its creator!\n\nSo, there thou hast it, a glimpse into the birthing of Hamlet. But know this, friend: a play is never truly finished until it lives upon the stage, breathed into life by the players and witnessed by the audience. It is then, and only then, that its true meaning doth unfold. Now, what sayest thou, doth this sate thine curiosity, or dost thou crave more?\n"
           }
         ]
       },
       {
         "chatId": "chat_1765668534720_c64e2vfji",
-        "chatName": "New Chat",
+        "chatName": "Test chat",
         "createdAt": "2025-12-13T23:28:54.720Z",
         "messages": [
           {
